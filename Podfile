@@ -5,14 +5,19 @@ target 'TestApp' do
   use_frameworks!
 
   pod 'Moya'
-  pod 'Alamofire', '~> 4.5.0'
-  pod 'SwiftyJSON', '~> 3.1.4'
+  pod 'Alamofire'
+  pod 'Cache'
   pod 'Bond', '~> 6.0-beta'
   pod 'RAMAnimatedTabBarController'
   pod 'SDWebImage'
   pod 'FCAlertView'
   pod 'NVActivityIndicatorView'
-  pod 'SwiftKeychainWrapper'
+  pod 'SwiftyJSON'
+  pod 'lottie-ios'
+  pod 'GhostTypewriter'
+  pod 'Hero'
+  pod 'CollectionViewSlantedLayout'
+  pod 'NVActivityIndicatorView'
 
   # Pods for TestApp
 
