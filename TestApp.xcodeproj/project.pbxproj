@@ -53,7 +53,6 @@
 		ED822BF620CAB9E000E530F7 /* ServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED822BF520CAB9E000E530F7 /* ServiceModel.swift */; };
 		ED822BF920CABBB100E530F7 /* RequestLinks.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED822BF720CABBB000E530F7 /* RequestLinks.plist */; };
 		ED822BFA20CABBB100E530F7 /* EnvironmentLinks.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED822BF820CABBB000E530F7 /* EnvironmentLinks.plist */; };
-		ED822C0E20CAFAF600E530F7 /* Boat_Loader.json in Resources */ = {isa = PBXBuildFile; fileRef = ED822C0D20CAFAF600E530F7 /* Boat_Loader.json */; };
 		ED822C1220CAFF6E00E530F7 /* LottieHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED822C1120CAFF6D00E530F7 /* LottieHelper.swift */; };
 		ED822C1820CB512300E530F7 /* RAMTabBarUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED822C1720CB512300E530F7 /* RAMTabBarUtils.swift */; };
 		ED822C2220CB53DF00E530F7 /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED822C2020CB53DF00E530F7 /* XibView.swift */; };
@@ -66,6 +65,7 @@
 		EDE9C8D620CD8002009D1C64 /* MovieShowsContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE9C8D520CD8002009D1C64 /* MovieShowsContainerViewModel.swift */; };
 		EDE9C8D920CDA0EB009D1C64 /* PagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE9C8D820CDA0EB009D1C64 /* PagerViewModel.swift */; };
 		EDE9C8DC20CE89B1009D1C64 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE9C8DB20CE89B1009D1C64 /* LoadingView.swift */; };
+		EDE9C8DF20CECFBB009D1C64 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EDE9C8E120CECFBB009D1C64 /* Localizable.strings */; };
 		EDF53EB720CAB21200542DBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF53EB620CAB21200542DBF /* AppDelegate.swift */; };
 		EDF53EBC20CAB21200542DBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDF53EBA20CAB21200542DBF /* Main.storyboard */; };
 		EDF53EBE20CAB21300542DBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDF53EBD20CAB21300542DBF /* Assets.xcassets */; };
@@ -147,7 +147,6 @@
 		ED822BF520CAB9E000E530F7 /* ServiceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceModel.swift; sourceTree = "<group>"; };
 		ED822BF720CABBB000E530F7 /* RequestLinks.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RequestLinks.plist; sourceTree = "<group>"; };
 		ED822BF820CABBB000E530F7 /* EnvironmentLinks.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EnvironmentLinks.plist; sourceTree = "<group>"; };
-		ED822C0D20CAFAF600E530F7 /* Boat_Loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Boat_Loader.json; sourceTree = "<group>"; };
 		ED822C1120CAFF6D00E530F7 /* LottieHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieHelper.swift; sourceTree = "<group>"; };
 		ED822C1720CB512300E530F7 /* RAMTabBarUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMTabBarUtils.swift; sourceTree = "<group>"; };
 		ED822C2020CB53DF00E530F7 /* XibView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XibView.swift; sourceTree = "<group>"; };
@@ -160,6 +159,9 @@
 		EDE9C8D520CD8002009D1C64 /* MovieShowsContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieShowsContainerViewModel.swift; sourceTree = "<group>"; };
 		EDE9C8D820CDA0EB009D1C64 /* PagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerViewModel.swift; sourceTree = "<group>"; };
 		EDE9C8DB20CE89B1009D1C64 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		EDE9C8E020CECFBB009D1C64 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		EDE9C8E220CECFC0009D1C64 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EDE9C8E420CED13D009D1C64 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
 		EDF53EB320CAB21200542DBF /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDF53EB620CAB21200542DBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDF53EBB20CAB21200542DBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -461,7 +463,6 @@
 		ED822BB920CAB57C00E530F7 /* Json */ = {
 			isa = PBXGroup;
 			children = (
-				ED822C0D20CAFAF600E530F7 /* Boat_Loader.json */,
 			);
 			path = Json;
 			sourceTree = "<group>";
@@ -469,6 +470,7 @@
 		ED822BBA20CAB58100E530F7 /* Localizable */ = {
 			isa = PBXGroup;
 			children = (
+				EDE9C8E120CECFBB009D1C64 /* Localizable.strings */,
 			);
 			path = Localizable;
 			sourceTree = "<group>";
@@ -809,9 +811,9 @@
 				EDF53EC120CAB21300542DBF /* LaunchScreen.storyboard in Resources */,
 				ED822BFA20CABBB100E530F7 /* EnvironmentLinks.plist in Resources */,
 				EDF53EBE20CAB21300542DBF /* Assets.xcassets in Resources */,
-				ED822C0E20CAFAF600E530F7 /* Boat_Loader.json in Resources */,
 				ED822BF920CABBB100E530F7 /* RequestLinks.plist in Resources */,
 				EDE9C8CF20CD39F7009D1C64 /* Pager.storyboard in Resources */,
+				EDE9C8DF20CECFBB009D1C64 /* Localizable.strings in Resources */,
 				EDF53EBC20CAB21200542DBF /* Main.storyboard in Resources */,
 				ED02B33520CBF037008593EC /* Roulette.storyboard in Resources */,
 				ED02B33A20CBF049008593EC /* MovieShowXibView.xib in Resources */,
@@ -1046,10 +1048,20 @@
 			name = Roulette.storyboard;
 			sourceTree = "<group>";
 		};
+		EDE9C8E120CECFBB009D1C64 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDE9C8E020CECFBB009D1C64 /* pt-BR */,
+				EDE9C8E220CECFC0009D1C64 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		EDF53EBA20CAB21200542DBF /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				EDF53EBB20CAB21200542DBF /* Base */,
+				EDE9C8E420CED13D009D1C64 /* pt-BR */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

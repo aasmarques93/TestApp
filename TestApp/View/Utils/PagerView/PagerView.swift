@@ -48,7 +48,7 @@ class PagerView: UIViewController {
     private func addViewIndicator() {
         viewIndicator.removeFromSuperview()
         
-        let width = viewModel?.firstItemWidth ?? itemWidth
+        let width = viewModel?.title(at: currentIndexPath)?.width ?? itemWidth
         viewIndicator.frame = CGRect(x: viewIndicator.frame.minX == 0 ? margin : viewIndicator.frame.minX,
                                      y: itemHeight - viewIndicatorBottomSpace,
                                      width: width + margin,
@@ -95,7 +95,7 @@ extension PagerView: UICollectionViewDataSource {
         if currentIndexPath == nil { currentIndexPath = indexPath }
 
         let cell = collectionView.dequeueReusableCell(PagerViewCell.self, for: indexPath)
-        cell.viewModel = viewModel 
+        cell.viewModel = viewModel
         cell.setupView(at: indexPath)
         cell.labelTitle.textColor = indexPath == currentIndexPath ? HexColor.secondary.color : HexColor.text.color
         return cell

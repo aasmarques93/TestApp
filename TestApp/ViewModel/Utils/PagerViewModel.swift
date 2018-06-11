@@ -20,7 +20,10 @@ struct PagerViewModel: ViewModel {
         arrayTitles = titles
     }
     
-    func title(at indexPath: IndexPath) -> String {
+    func title(at indexPath: IndexPath?) -> String? {
+        guard let indexPath = indexPath else {
+            return arrayTitles.first
+        }
         return arrayTitles[indexPath.row]
     }
 }

@@ -15,8 +15,6 @@ struct Constants {
 
 enum Titles: String {
     // Button Common Titles
-    case done = "OK"
-    
     case movies = "Movies"
     case tvShows = "TV Shows"
     case roulette = "Roulette"
@@ -25,8 +23,7 @@ enum Titles: String {
     // Titles
     case error = "Error"
     case success = "Success"
-    case click = "Click"
-    case event = "Event"
+    case done = "OK"
     
     // Photo Picker
     case photos = "All photos"
