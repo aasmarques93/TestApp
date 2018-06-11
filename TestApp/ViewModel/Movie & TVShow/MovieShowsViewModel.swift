@@ -26,14 +26,16 @@ class MovieShowsViewModel: ViewModel, LoadingProtocol {
     var isResultEmpty: Bool { return numberOfItems == 0 }
     
     // MARK: Variables
+    private var isMoviesTab: Bool
     private var isDataLoading = false
     
     private var selectedTab: MovieShowTab
     
     // MARK: - Life cycle -
     
-    init(selectedTab: MovieShowTab) {
+    init(selectedTab: MovieShowTab, isMoviesTab: Bool) {
         self.selectedTab = selectedTab
+        self.isMoviesTab = isMoviesTab
     }
     
     // MARK: - Service Requests -
@@ -86,5 +88,12 @@ class MovieShowsViewModel: ViewModel, LoadingProtocol {
             return nil
         }
         return MovieShowCellViewModel(object: arrayMovieShows[indexPath.row])
+    }
+    
+    func movieShowDetailViewModel(at indexPath: IndexPath) -> MovieShowDetailViewModel? {
+        guard indexPath.row < arrayMovieShows.count else {
+            return nil
+        }
+        return MovieShowDetailViewModel(object: arrayMovieShows[indexPath.row], isMoviesTab: isMoviesTab)
     }
 }

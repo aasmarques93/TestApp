@@ -22,7 +22,7 @@ extension RAMAnimatedTabBarItem {
 extension RAMItemAnimation {
     open override func awakeFromNib() {
         super.awakeFromNib()
-        textSelectedColor = HexColor.secondary.color
+        textSelectedColor = UIColor(colorStyle: .secondary)
         iconSelectedColor = textSelectedColor
     }
 }

@@ -21,7 +21,7 @@ fileprivate class LoadingView: UIView {
                                                         type: type)
         
         activityIndicator.center = CGPoint(x: self.center.x, y: self.center.y)
-        activityIndicator.color = HexColor.secondary.color
+        activityIndicator.color = UIColor(colorStyle: .secondary)
         activityIndicator.startAnimating()
         
         return activityIndicator
@@ -29,7 +29,7 @@ fileprivate class LoadingView: UIView {
 
     init(frame: CGRect = .zero, backgroundColor: UIColor? = nil) {
         super.init(frame: frame)
-        self.backgroundColor = backgroundColor ?? HexColor.primary.color.withAlphaComponent(alphaBackground)
+        self.backgroundColor = backgroundColor ?? UIColor(colorStyle: .primary).withAlphaComponent(alphaBackground)
         self.addSubview(activityIndicator)
     }
     

@@ -16,10 +16,16 @@ class MovieShowsContainerView: UIViewController {
     
     var viewModel: MovieShowsContainerViewModel?
     
+    // MARK: Variables
+    var isMoviesTab: Bool {
+        return navigationController?.tabIndex == 0
+    }
+    
     // MARK: - Life cycle -
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setupAppearance()
         setupViewModel()
         setupPagerView()
         setupPageViewController()
@@ -27,8 +33,11 @@ class MovieShowsContainerView: UIViewController {
     
     // MARK: - Setup -
     
+    private func setupAppearance() {
+        setTitleView(text: isMoviesTab ? Titles.movies.localized : Titles.tvShows.localized)
+    }
+    
     private func setupViewModel() {
-        let isMoviesTab = navigationController?.tab == 0
         viewModel = MovieShowsContainerViewModel(isMoviesTab: isMoviesTab)
     }
     

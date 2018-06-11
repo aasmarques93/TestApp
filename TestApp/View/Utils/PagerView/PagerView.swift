@@ -64,7 +64,7 @@ class PagerView: UIViewController {
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: animated)
         
         let cell = collectionView.dequeueReusableCell(PagerViewCell.self, for: indexPath)
-        cell.labelTitle.textColor = HexColor.secondary.color
+        cell.labelTitle.textColor = UIColor(colorStyle: .secondary)
         collectionView.reloadData()
 
         func changeFrame() {
@@ -97,7 +97,7 @@ extension PagerView: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(PagerViewCell.self, for: indexPath)
         cell.viewModel = viewModel
         cell.setupView(at: indexPath)
-        cell.labelTitle.textColor = indexPath == currentIndexPath ? HexColor.secondary.color : HexColor.text.color
+        cell.labelTitle.textColor = indexPath == currentIndexPath ? UIColor(colorStyle: .secondary) : UIColor(colorStyle: .text)
         return cell
     }
 }

@@ -18,8 +18,6 @@
 	<string>/movie/{idMovie}?language={language}&amp;</string>
 	<key>recommendations</key>
 	<string>/movie/{idMovie}/recommendations?page={page}&amp;</string>
-	<key>similar</key>
-	<string>/movie/{idMovie}/similar?page={page}&amp;</string>
 	<key>reviews</key>
 	<string>/movie/{idMovie}/reviews?page={page}&amp;</string>
 	<key>searchMovie</key>
@@ -40,8 +38,6 @@
 	<string>/tv/{id}?language={language}&amp;</string>
 	<key>tvRecommendations</key>
 	<string>/tv/{id}/recommendations?language={language}&amp;</string>
-	<key>tvSimilar</key>
-	<string>/tv/{id}/similar?language={language}&amp;</string>
 	<key>genres</key>
 	<string>/genre/movie/list?language={language}&amp;</string>
 	<key>genresTV</key>

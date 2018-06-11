@@ -10,9 +10,9 @@ import UIKit
 
 class CircularProgressView: UIView {
     struct DefaultColor {
-        static let circleStrokeColor = HexColor.secondary.color.withAlphaComponent(0.1)
-        static let circleFillColor = HexColor.primary.color
-        static let progressCircleStrokeColor = HexColor.secondary.color
+        static let circleStrokeColor = UIColor(colorStyle: .secondary).withAlphaComponent(0.1)
+        static let circleFillColor = UIColor(colorStyle: .primary)
+        static let progressCircleStrokeColor = UIColor(colorStyle: .secondary)
         static let progressCircleFillColor = UIColor.clear
     }
     
@@ -61,7 +61,7 @@ class CircularProgressView: UIView {
         textLabel.frame = rect
         textLabel.textAlignment = .center
         textLabel.font = UIFont.boldSystemFont(ofSize: 14)
-        textLabel.textColor = HexColor.text.color
+        textLabel.textColor = UIColor(colorStyle: .text)
         textLabel.text = "\(Int(progress * 100))%"
         textLabel.removeFromSuperview()
         

@@ -43,7 +43,7 @@
 		ED822BE720CAB5DB00E530F7 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED822BCC20CAB5DA00E530F7 /* PhotoPicker.swift */; };
 		ED822BE820CAB5DB00E530F7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED822BCE20CAB5DA00E530F7 /* Constants.swift */; };
 		ED822BE920CAB5DB00E530F7 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED822BCF20CAB5DA00E530F7 /* Messages.swift */; };
-		ED822BEB20CAB5DB00E530F7 /* HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED822BD320CAB5DA00E530F7 /* HexColor.swift */; };
+		ED822BEB20CAB5DB00E530F7 /* ColorStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED822BD320CAB5DA00E530F7 /* ColorStyle.swift */; };
 		ED822BEC20CAB5DB00E530F7 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED822BD520CAB5DA00E530F7 /* Date.swift */; };
 		ED822BED20CAB5DB00E530F7 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED822BD720CAB5DA00E530F7 /* DateHelper.swift */; };
 		ED822BEE20CAB5DB00E530F7 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED822BD920CAB5DB00E530F7 /* PickerViewController.swift */; };
@@ -56,6 +56,7 @@
 		ED822C1220CAFF6E00E530F7 /* LottieHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED822C1120CAFF6D00E530F7 /* LottieHelper.swift */; };
 		ED822C1820CB512300E530F7 /* RAMTabBarUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED822C1720CB512300E530F7 /* RAMTabBarUtils.swift */; };
 		ED822C2220CB53DF00E530F7 /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED822C2020CB53DF00E530F7 /* XibView.swift */; };
+		ED89784920CF1EA100F3962B /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED89784820CF1EA100F3962B /* Color.xcassets */; };
 		EDE9C8C620CD349C009D1C64 /* MovieShowCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE9C8C520CD349C009D1C64 /* MovieShowCellViewModel.swift */; };
 		EDE9C8CA20CD3801009D1C64 /* PagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE9C8C920CD3800009D1C64 /* PagerView.swift */; };
 		EDE9C8CC20CD38E1009D1C64 /* PagerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE9C8CB20CD38E1009D1C64 /* PagerViewCell.swift */; };
@@ -66,6 +67,7 @@
 		EDE9C8D920CDA0EB009D1C64 /* PagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE9C8D820CDA0EB009D1C64 /* PagerViewModel.swift */; };
 		EDE9C8DC20CE89B1009D1C64 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE9C8DB20CE89B1009D1C64 /* LoadingView.swift */; };
 		EDE9C8DF20CECFBB009D1C64 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EDE9C8E120CECFBB009D1C64 /* Localizable.strings */; };
+		EDE9C8E620CEE370009D1C64 /* MovieShowDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDE9C8E520CEE370009D1C64 /* MovieShowDetail.storyboard */; };
 		EDF53EB720CAB21200542DBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF53EB620CAB21200542DBF /* AppDelegate.swift */; };
 		EDF53EBC20CAB21200542DBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDF53EBA20CAB21200542DBF /* Main.storyboard */; };
 		EDF53EBE20CAB21300542DBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDF53EBD20CAB21300542DBF /* Assets.xcassets */; };
@@ -136,7 +138,7 @@
 		ED822BCC20CAB5DA00E530F7 /* PhotoPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		ED822BCE20CAB5DA00E530F7 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		ED822BCF20CAB5DA00E530F7 /* Messages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
-		ED822BD320CAB5DA00E530F7 /* HexColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexColor.swift; sourceTree = "<group>"; };
+		ED822BD320CAB5DA00E530F7 /* ColorStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorStyle.swift; sourceTree = "<group>"; };
 		ED822BD520CAB5DA00E530F7 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		ED822BD620CAB5DA00E530F7 /* DateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateHelper.h; sourceTree = "<group>"; };
 		ED822BD720CAB5DA00E530F7 /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 		ED822C1120CAFF6D00E530F7 /* LottieHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieHelper.swift; sourceTree = "<group>"; };
 		ED822C1720CB512300E530F7 /* RAMTabBarUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMTabBarUtils.swift; sourceTree = "<group>"; };
 		ED822C2020CB53DF00E530F7 /* XibView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XibView.swift; sourceTree = "<group>"; };
+		ED89784820CF1EA100F3962B /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		EDE9C8C520CD349C009D1C64 /* MovieShowCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieShowCellViewModel.swift; sourceTree = "<group>"; };
 		EDE9C8C920CD3800009D1C64 /* PagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerView.swift; sourceTree = "<group>"; };
 		EDE9C8CB20CD38E1009D1C64 /* PagerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerViewCell.swift; sourceTree = "<group>"; };
@@ -162,6 +165,7 @@
 		EDE9C8E020CECFBB009D1C64 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		EDE9C8E220CECFC0009D1C64 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EDE9C8E420CED13D009D1C64 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
+		EDE9C8E520CEE370009D1C64 /* MovieShowDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MovieShowDetail.storyboard; sourceTree = "<group>"; };
 		EDF53EB320CAB21200542DBF /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDF53EB620CAB21200542DBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDF53EBB20CAB21200542DBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -231,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				ED02B32320CBF037008593EC /* MovieShow.storyboard */,
+				EDE9C8E520CEE370009D1C64 /* MovieShowDetail.storyboard */,
 			);
 			path = "Movie & TVShow";
 			sourceTree = "<group>";
@@ -443,6 +448,7 @@
 		ED822BB720CAB56500E530F7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				ED89784720CF1E8F00F3962B /* Assets */,
 				ED822BBA20CAB58100E530F7 /* Localizable */,
 				ED822BB920CAB57C00E530F7 /* Json */,
 				ED822BB820CAB57800E530F7 /* Plists */,
@@ -531,7 +537,7 @@
 		ED822BD220CAB5DA00E530F7 /* Color */ = {
 			isa = PBXGroup;
 			children = (
-				ED822BD320CAB5DA00E530F7 /* HexColor.swift */,
+				ED822BD320CAB5DA00E530F7 /* ColorStyle.swift */,
 			);
 			path = Color;
 			sourceTree = "<group>";
@@ -589,6 +595,15 @@
 				ED822C2020CB53DF00E530F7 /* XibView.swift */,
 			);
 			path = XIB;
+			sourceTree = "<group>";
+		};
+		ED89784720CF1E8F00F3962B /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				EDF53EBD20CAB21300542DBF /* Assets.xcassets */,
+				ED89784820CF1EA100F3962B /* Color.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		EDE9C8C820CD37C3009D1C64 /* PagerView */ = {
@@ -666,7 +681,6 @@
 				ED822BAF20CAB4DD00E530F7 /* User Interface */,
 				EDF53EB620CAB21200542DBF /* AppDelegate.swift */,
 				ED822BB720CAB56500E530F7 /* Supporting Files */,
-				EDF53EBD20CAB21300542DBF /* Assets.xcassets */,
 			);
 			path = TestApp;
 			sourceTree = "<group>";
@@ -813,7 +827,9 @@
 				EDF53EBE20CAB21300542DBF /* Assets.xcassets in Resources */,
 				ED822BF920CABBB100E530F7 /* RequestLinks.plist in Resources */,
 				EDE9C8CF20CD39F7009D1C64 /* Pager.storyboard in Resources */,
+				ED89784920CF1EA100F3962B /* Color.xcassets in Resources */,
 				EDE9C8DF20CECFBB009D1C64 /* Localizable.strings in Resources */,
+				EDE9C8E620CEE370009D1C64 /* MovieShowDetail.storyboard in Resources */,
 				EDF53EBC20CAB21200542DBF /* Main.storyboard in Resources */,
 				ED02B33520CBF037008593EC /* Roulette.storyboard in Resources */,
 				ED02B33A20CBF049008593EC /* MovieShowXibView.xib in Resources */,
@@ -870,7 +886,6 @@
 				"${BUILT_PRODUCTS_DIR}/Differ/Differ.framework",
 				"${BUILT_PRODUCTS_DIR}/FCAlertView/FCAlertView.framework",
 				"${BUILT_PRODUCTS_DIR}/GhostTypewriter/GhostTypewriter.framework",
-				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/RAMAnimatedTabBarController/RAMAnimatedTabBarController.framework",
@@ -878,6 +893,8 @@
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/ViewAnimator/ViewAnimator.framework",
+				"${BUILT_PRODUCTS_DIR}/ZoomTransitioning/ZoomTransitioning.framework",
 				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -889,7 +906,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differ.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FCAlertView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GhostTypewriter.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RAMAnimatedTabBarController.framework",
@@ -897,6 +913,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ViewAnimator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZoomTransitioning.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -949,7 +967,7 @@
 			files = (
 				ED02B37C20CBF091008593EC /* MovieShowViewCell.swift in Sources */,
 				ED822BF220CAB9CD00E530F7 /* Model.swift in Sources */,
-				ED822BEB20CAB5DB00E530F7 /* HexColor.swift in Sources */,
+				ED822BEB20CAB5DB00E530F7 /* ColorStyle.swift in Sources */,
 				ED02B3FB20CC5057008593EC /* MovieShowsView.swift in Sources */,
 				EDE9C8D620CD8002009D1C64 /* MovieShowsContainerViewModel.swift in Sources */,
 				ED822BE320CAB5DB00E530F7 /* Extensions.swift in Sources */,
@@ -1199,10 +1217,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XXT2XJVDAC;
 				INFOPLIST_FILE = "$(SRCROOT)/TestApp/Supporting Files/Plists/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aasmarques.TestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "TestApp/Utils/TestApp-Bridging-Header.h";
@@ -1219,10 +1234,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XXT2XJVDAC;
 				INFOPLIST_FILE = "$(SRCROOT)/TestApp/Supporting Files/Plists/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aasmarques.TestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "TestApp/Utils/TestApp-Bridging-Header.h";
@@ -1240,11 +1252,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XXT2XJVDAC;
 				INFOPLIST_FILE = TestAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aasmarques.TestAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1262,11 +1270,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XXT2XJVDAC;
 				INFOPLIST_FILE = TestAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aasmarques.TestAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1283,11 +1287,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XXT2XJVDAC;
 				INFOPLIST_FILE = TestAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aasmarques.TestAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1304,11 +1304,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XXT2XJVDAC;
 				INFOPLIST_FILE = TestAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aasmarques.TestAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

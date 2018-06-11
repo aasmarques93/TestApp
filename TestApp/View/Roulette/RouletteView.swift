@@ -49,7 +49,7 @@ class RouletteView: UIViewController {
     
     private func setupAppearance() {
         labelMessage.typingTimeInterval = 0.03
-        buttonSpin.backgroundColor = HexColor.secondary.color
+        buttonSpin.backgroundColor = UIColor(colorStyle: .secondary)
     }
     
     // MARK: - Bindings -

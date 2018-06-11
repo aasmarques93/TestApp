@@ -16,7 +16,7 @@ class MovieShowXibView: XibView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        backgroundColor = HexColor.primary.color
-        imageViewMovie.backgroundColor = HexColor.primary.color
+        backgroundColor = UIColor(colorStyle: .primary)
+        imageViewMovie.backgroundColor = backgroundColor
     }
 }

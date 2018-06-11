@@ -9,8 +9,7 @@
 import Bond
 
 protocol MovieShowDetailViewModelDelegate: ViewModelDelegate {
-    func reloadRecommendedMovies()
-    func reloadSimilarMovies()
+    func reloadRecommendedMovieShows()
 }
 
 class MovieShowDetailViewModel: ViewModel {
@@ -23,7 +22,7 @@ class MovieShowDetailViewModel: ViewModel {
     private let serviceModel = MovieShowDetailServiceModel()
     
     // MARK: Observables
-    var name = Observable<String?>(nil)
+    var title = Observable<String?>(nil)
     var average = Observable<String?>(nil)
     var date = Observable<String?>(nil)
     var runtime = Observable<String?>(nil)
@@ -31,124 +30,90 @@ class MovieShowDetailViewModel: ViewModel {
     var overview = Observable<String?>(nil)
     
     // MARK: Objects
-    private var movie: MovieShow
+    private var movieShow: MovieShow
     
-    private var movieDetail: MovieShowDetail? {
+    private var movieShowDetail: MovieShowDetail? {
         didSet {
             delegate?.reloadData?()
             
-            name.value = valueDescription(movieDetail?.title)
-            date.value = valueDescription(movieDetail?.releaseDate)
-            average.value = valueDescription(movieDetail?.voteAverage)
-            runtime.value = "\(valueDescription(movieDetail?.runtime)) minutes"
-            overview.value = valueDescription(movieDetail?.overview)
+            title.value = movieShowDetail?.title ?? movieShowDetail?.originalName
+            date.value = valueDescription(movieShowDetail?.releaseDate)
+            average.value = valueDescription(movieShowDetail?.voteAverage)
+            runtime.value = "\(valueDescription(movieShowDetail?.runtime)) minutes"
+            overview.value = valueDescription(movieShowDetail?.overview)
             
             genres.value = setupGenres()
         }
     }
     
+    // MARK: Variables
+    private var isMoviesTab: Bool
+    
     var imageUrl: URL? {
-        return URL(string: serviceModel.imageUrl(with: movie.backdropPath ?? ""))
+        return URL(string: serviceModel.imageUrl(with: movieShow.posterPath ?? ""))
+    }
+    
+    var movieShowTitle: String? {
+        return movieShow.title ?? movieShow.originalName
     }
     
     // MARK: Recommended
-    private var arrayRecommendedMovies = [MovieShow]() { didSet { delegate?.reloadRecommendedMovies() } }
-    var numberOfRecommendedMovies: Int { return arrayRecommendedMovies.count }
-    
-    // MARK: Similar Movies
-    private var arraySimilarMovies = [MovieShow]() { didSet { delegate?.reloadSimilarMovies() } }
-    var numberOfSimilarMovies: Int { return arraySimilarMovies.count }
+    private var arrayRecommendedMovieShows = [MovieShow]() { didSet { delegate?.reloadRecommendedMovieShows() } }
+    var numberOfRecommendedMovieShows: Int { return arrayRecommendedMovieShows.count }
     
     // MARK: - Life cycle -
     
-    init(_ object: MovieShow) {
-        self.movie = object
+    init(object: MovieShow, isMoviesTab: Bool) {
+        self.movieShow = object
+        self.isMoviesTab = isMoviesTab
     }
     
     // MARK: - Service requests -
     
     func loadData() {
-        getMovieDetail()
-        getRecommendedMovies()
-        getSimilarMovies()
+        getMovieShowDetail()
+        getRecommendedMovieShows()
     }
     
-    private func getMovieDetail() {
-        serviceModel.getDetail(from: movie) { [weak self] (object) in
-            self?.movieDetail = object
+    private func getMovieShowDetail() {
+        serviceModel.getDetail(from: movieShow) { [weak self] (object) in
+            self?.movieShowDetail = object
         }
     }
     
-    private func getRecommendedMovies() {
-        guard arrayRecommendedMovies.isEmpty else {
-            return
-        }
-        
-        serviceModel.getRelated(from: movie, requestUrl: .recommendations) { [weak self] (object) in
+    private func getRecommendedMovieShows() {
+        let requestUrl: RequestUrl = isMoviesTab ? .recommendations : .tvRecommendations
+        serviceModel.getRelated(from: movieShow, requestUrl: requestUrl) { [weak self] (object) in
             guard let results = object.results else {
                 return
             }
-            
-            self?.arrayRecommendedMovies.append(contentsOf: results)
-        }
-    }
-    
-    private func getSimilarMovies() {
-        guard arraySimilarMovies.isEmpty else {
-            return
-        }
-        
-        serviceModel.getRelated(from: movie, requestUrl: .similar) { [weak self] (object) in
-            guard let results = object.results else {
-                return
-            }
-            
-            self?.arraySimilarMovies.append(contentsOf: results)
+            self?.arrayRecommendedMovieShows.append(contentsOf: results)
         }
     }
     
     // MARK: - View Model -
     
-    // MARK: Movie
-    
-    var movieName: String? {
-        return movie.title
-    }
-    
     private func setupGenres() -> String {
-        var string = ""
-        if let array = movieDetail?.genres {
-            let arrayNames = array.map { valueDescription($0.name) }
-            string = arrayNames.joined(separator: ", ")
+        guard let array = movieShowDetail?.genres else {
+            return ""
         }
+        
+        var string = ""
+        let arrayNames = array.map { valueDescription($0.name) }
+        string = arrayNames.joined(separator: ", ")
         return string
     }
     
     // MARK: Recommendations
     
-    func movieRecommendationImageUrl(at index: Int) -> URL? {
-        let movie = arrayRecommendedMovies[index]
+    func movieShowRecommendedImageUrl(at index: Int) -> URL? {
+        let movie = arrayRecommendedMovieShows[index]
         return URL(string: serviceModel.imageUrl(with: movie.posterPath ?? ""))
     }
     
-    // MARK: Similar
-    
-    func similarMovieImageUrl(at index: Int) -> URL? {
-        let movie = arraySimilarMovies[index]
-        return URL(string: serviceModel.imageUrl(with: movie.posterPath ?? ""))
-    }
-
     // MARK: - View Model Instantiation -
     
     func recommendedMovieShowDetailViewModel(at index: Int) -> MovieShowDetailViewModel? {
-        return movieShowDetailViewModel(arrayRecommendedMovies[index])
-    }
-    
-    func similarMovieShowDetailViewModel(at index: Int) -> MovieShowDetailViewModel? {
-        return movieShowDetailViewModel(arraySimilarMovies[index])
-    }
-    
-    private func movieShowDetailViewModel(_ movieShow: MovieShow) -> MovieShowDetailViewModel? {
-        return MovieShowDetailViewModel(movieShow)
+        return MovieShowDetailViewModel(object: arrayRecommendedMovieShows[index], isMoviesTab: isMoviesTab)
     }
 }

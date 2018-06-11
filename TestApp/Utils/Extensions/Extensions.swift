@@ -155,18 +155,18 @@ extension UIPageViewController {
 
 extension UINavigationController {
     private struct AssociatedKeys {
-        static var tab = 0
+        static var tabIndex = 0
     }
     
-    @IBInspectable var tab: CGFloat {
+    @IBInspectable var tabIndex: CGFloat {
         get {
-            guard let object = objc_getAssociatedObject(self, &AssociatedKeys.tab) as? CGFloat else {
+            guard let object = objc_getAssociatedObject(self, &AssociatedKeys.tabIndex) as? CGFloat else {
                 return 0
             }
             return object
         }
         set(value) {
-            objc_setAssociatedObject(self, &AssociatedKeys.tab, value, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, &AssociatedKeys.tabIndex, value, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
 }

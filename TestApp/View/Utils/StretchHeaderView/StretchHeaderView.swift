@@ -9,13 +9,15 @@
 import UIKit
 
 class StretchHeaderView: UIView {
-    var imageViewHeader = UIImageView()
-    var activityIndicator = UIActivityIndicatorView()
+    private var imageViewHeader = UIImageView()
+    private var activityIndicator = UIActivityIndicatorView()
     
-    var minHeightPercentual: CGFloat = 0, maxHeightPercentual: CGFloat = 1.3
+    private var minHeightPercentual: CGFloat = 0, maxHeightPercentual: CGFloat = 0
     
-    func setupHeaderView(tableView: UITableView, imageUrl: URL? = nil,
-                         minHeightPercentual: CGFloat = 0, maxHeightPercentual: CGFloat = 1.3) {
+    func setupHeaderView(tableView: UITableView,
+                         imageUrl: URL? = nil,
+                         minHeightPercentual: CGFloat = 0,
+                         maxHeightPercentual: CGFloat = 1) {
         
         self.minHeightPercentual = minHeightPercentual
         self.maxHeightPercentual = maxHeightPercentual
@@ -40,11 +42,7 @@ class StretchHeaderView: UIView {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let y = frame.height - (scrollView.contentOffset.y + frame.height)
-        let newHeight = min(max(y, minHeightPercentual), frame.height * maxHeightPercentual)
+        let newHeight = min(max(y, minHeightPercentual), frame.height * (maxHeightPercentual + 1))
         imageViewHeader.frame = CGRect(x: 0, y: scrollView.contentOffset.y, width: imageViewHeader.frame.width, height: newHeight)
-    }
-    
-    func deviceOrientationDidRotate(to size: CGSize) {
-        imageViewHeader.frame = CGRect(x: frame.minX, y: frame.minY, width: size.width, height: frame.height)
     }
 }

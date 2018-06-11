@@ -13,7 +13,6 @@ import CollectionViewSlantedLayout
 class MovieShowViewCell: CollectionViewSlantedCell {
     // MARK: - Outlets -
     
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var viewTitle: UIView!
     @IBOutlet weak var labelTitle: UILabel!
@@ -28,13 +27,7 @@ class MovieShowViewCell: CollectionViewSlantedCell {
     func setupView(at indexPath: IndexPath, withLayout layout: CollectionViewSlantedLayout?) {
         setupBidings()
         setupAppearance(at: indexPath, withLayout: layout)
-        imageView.sd_setImage(with: viewModel?.imagePathUrl,
-                              placeholderImage: UIImage(),
-                              options: [],
-                              progress: nil) { (image, error, type, url) in
-            
-                                self.activityIndicator.isHidden = true
-        }
+        imageView.sd_setImage(with: viewModel?.imagePathUrl, placeholderImage: UIImage())
         viewModel?.loadData()
     }
     
@@ -44,9 +37,6 @@ class MovieShowViewCell: CollectionViewSlantedCell {
     }
     
     private func setupAppearance(at indexPath: IndexPath, withLayout layout: CollectionViewSlantedLayout?) {
-        activityIndicator.startAnimating()
-        activityIndicator.isHidden = false
-        
         guard let layout = layout else {
             return
         }

@@ -62,8 +62,8 @@ extension UIAlertController {
               secondaryAction: AlertHandler? = nil) {
         
         let alertView = FCAlertView()
-        alertView.colorScheme = type == .error ? HexColor.accent.color : HexColor.secondary.color
-        alertView.titleColor = HexColor.primary.color
+        alertView.colorScheme = type == .error ? UIColor(colorStyle: .accent) : UIColor(colorStyle: .secondary)
+        alertView.titleColor = UIColor(colorStyle: .primary)
         
         alertView.doneActionBlock {
             mainAction?()

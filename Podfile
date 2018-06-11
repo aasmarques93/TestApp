@@ -15,9 +15,10 @@ target 'TestApp' do
   pod 'SwiftyJSON'
   pod 'lottie-ios'
   pod 'GhostTypewriter'
-  pod 'Hero'
   pod 'CollectionViewSlantedLayout'
   pod 'NVActivityIndicatorView'
+  pod 'ViewAnimator'
+  pod 'ZoomTransitioning'
 
   # Pods for TestApp
 

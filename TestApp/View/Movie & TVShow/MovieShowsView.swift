@@ -12,21 +12,12 @@ import CollectionViewSlantedLayout
 private let offsetSpeed: CGFloat = 150
 private let cellHeight: CGFloat = 275
 
-class MovieShowsView: UIViewController {
-    // MARK: - Outlets -
-    
-    @IBOutlet weak var collectionView: UICollectionView!
-    
+class MovieShowsView: UICollectionViewController {
     // MARK: - View Model -
     
     var viewModel: MovieShowsViewModel?
     
     // MARK: - Life cycle -
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupAppearance()
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -35,10 +26,6 @@ class MovieShowsView: UIViewController {
     
     // MARK: - Setup -
     
-    private func setupAppearance() {
-        collectionView.keyboardDismissMode = .onDrag
-    }
-
     private func setupViewModel() {
         viewModel?.delegate = self
         viewModel?.loadData()
@@ -47,8 +34,8 @@ class MovieShowsView: UIViewController {
 
 extension MovieShowsView: ViewModelDelegate {
     func reloadData() {
-        collectionView.reloadData()
-        collectionView.collectionViewLayout.invalidateLayout()
+        collectionView?.reloadData()
+        collectionView?.collectionViewLayout.invalidateLayout()
     }
     
     func showAlert(message: String?) {
@@ -56,16 +43,18 @@ extension MovieShowsView: ViewModelDelegate {
     }
 }
 
-extension MovieShowsView: UICollectionViewDataSource {
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
+// MARK: - UICollectionViewDataSource -
+
+extension MovieShowsView {
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel?.numberOfItems ?? 0
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(MovieShowViewCell.self, for: indexPath)
         cell.viewModel = viewModel?.movieShowCellViewModel(at: indexPath)
         cell.setupView(at: indexPath, withLayout: collectionView.collectionViewLayout as? CollectionViewSlantedLayout)
@@ -73,11 +62,15 @@ extension MovieShowsView: UICollectionViewDataSource {
     }
 }
 
-extension MovieShowsView: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+// MARK: - UICollectionViewDelegate -
+
+extension MovieShowsView {
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let viewController = instantiate(viewController: MovieShowDetailView.self, from: .movieShowDetail)
+        viewController.viewModel = viewModel?.movieShowDetailViewModel(at: indexPath)
+        navigationController?.pushViewController(viewController, animated: true)
     }
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         viewModel?.loadDataPaginationIfNeeded(at: indexPath)
     }
 }
@@ -90,8 +83,10 @@ extension MovieShowsView: CollectionViewDelegateSlantedLayout {
     }
 }
 
-extension MovieShowsView: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+// MARK: - UIScrollViewDelegate -
+
+extension MovieShowsView {
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard let collectionView = collectionView, let visibleCells = collectionView.visibleCells as? [MovieShowViewCell] else {
             return
         }

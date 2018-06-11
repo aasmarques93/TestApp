@@ -13,6 +13,7 @@ typealias HandlerGeneric = (_ object: Any?) -> Swift.Void
 enum Storyboard: String {
     case main = "Main"
     case movieShow = "MovieShow"
+    case movieShowDetail = "MovieShowDetail"
     case roulette = "Roulette"
 }
 

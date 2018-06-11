@@ -69,7 +69,7 @@ struct MovieShowsContainerViewModel: ViewModel {
     
     // MARK: - View Model instantiation -
     func movieShowsViewModel(at index: Int) -> MovieShowsViewModel? {
-        return MovieShowsViewModel(selectedTab: arrayTabs[index])
+        return MovieShowsViewModel(selectedTab: arrayTabs[index], isMoviesTab: isMoviesTab)
     }
     
     func pagerViewModel() -> PagerViewModel {

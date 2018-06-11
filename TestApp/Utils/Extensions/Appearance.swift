@@ -10,8 +10,8 @@ import UIKit
 
 extension UINavigationController {
     open override func awakeFromNib() {
-        navigationBar.barTintColor = HexColor.primary.color
-        navigationBar.tintColor = HexColor.secondary.color
+        navigationBar.barTintColor = UIColor(colorStyle: .primary)
+        navigationBar.tintColor = UIColor(colorStyle: .secondary)
         navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: navigationBar.tintColor]
         navigationBar.isTranslucent = false
         navigationBar.isOpaque = true
@@ -23,15 +23,24 @@ extension UINavigationController {
 
 extension UIViewController {
     open override func awakeFromNib() {
-        view.backgroundColor = HexColor.primary.color
+        view.backgroundColor = UIColor(colorStyle: .primary)
+    }
+    
+    func setTitleView(text: String) {
+        let labelTitle = UILabel()
+        labelTitle.text = text
+        labelTitle.textColor = navigationController?.navigationBar.tintColor
+        labelTitle.font = UIFont.boldSystemFont(ofSize: 17)
+        labelTitle.sizeToFit()
+        navigationItem.titleView = labelTitle
     }
 }
 
 extension UITabBar {
     open override func awakeFromNib() {
         isTranslucent = false
-        barTintColor = HexColor.primary.color
-        tintColor = HexColor.secondary.color
+        barTintColor = UIColor(colorStyle: .primary)
+        tintColor = UIColor(colorStyle: .secondary)
     }
 }
 
@@ -74,7 +83,7 @@ extension CAGradientLayer {
 
 extension UITabBarController {
     open override func awakeFromNib() {
-        tabBar.tintColor = HexColor.primary.color
+        tabBar.tintColor = UIColor(colorStyle: .primary)
     }
 }
 
@@ -134,46 +143,51 @@ extension UIView {
             return
         }
         
+        let style = ColorStyle(rawValue: colorStyle ?? "")
+        
         if let label = self as? UILabel {
-            label.textColor = HexColor.color(from: colorStyle) ?? HexColor.text.color
+            label.textColor = UIColor(colorStyle: style ?? .text)
             return
         }
         if let textField = self as? UITextField {
-            textField.textColor = HexColor.color(from: colorStyle) ?? HexColor.text.color
-            textField.placeHolderColor = HexColor.color(from: colorStyle) ?? HexColor.text.color
+            textField.textColor = UIColor(colorStyle: style ?? .text)
+            textField.placeHolderColor = UIColor(colorStyle: style ?? .text)
             return
         }
         if let textView = self as? UITextView {
-            textView.textColor = HexColor.color(from: colorStyle) ?? HexColor.text.color
+            textView.textColor = UIColor(colorStyle: style ?? .text)
             return
         }
         if let segmentedControl = self as? UISegmentedControl {
-            segmentedControl.tintColor = HexColor.color(from: colorStyle) ?? HexColor.secondary.color
+            segmentedControl.tintColor = UIColor(colorStyle: style ?? .secondary)
             return
         }
         if let switchValue = self as? UISwitch {
-            switchValue.onTintColor = HexColor.color(from: colorStyle) ?? HexColor.secondary.color
+            switchValue.onTintColor = UIColor(colorStyle: style ?? .secondary)
             return
         }
         if let stepper = self as? UIStepper {
-            stepper.tintColor = HexColor.color(from: colorStyle) ?? HexColor.secondary.color
+            stepper.tintColor = UIColor(colorStyle: style ?? .secondary)
             return
         }
         if let progressView = self as? UIProgressView {
-            progressView.progressTintColor = HexColor.color(from: colorStyle) ?? HexColor.secondary.color
+            progressView.progressTintColor = UIColor(colorStyle: style ?? .secondary)
             return
         }
         if let activityIndicator = self as? UIActivityIndicatorView {
-            activityIndicator.color = HexColor.color(from: colorStyle) ?? HexColor.secondary.color
+            activityIndicator.color = UIColor(colorStyle: style ?? .secondary)
             return
         }
         if let button = self as? UIButton {
-            button.setTitleColor(HexColor.color(from: colorStyle) ?? HexColor.text.color, for: .normal)
-            button.tintColor = HexColor.color(from: colorStyle) ?? HexColor.text.color
+            button.setTitleColor(UIColor(colorStyle: style ?? .text), for: .normal)
+            button.tintColor = UIColor(colorStyle: style ?? .text)
             return
         }
         
-        self.backgroundColor = HexColor.color(from: colorStyle) ?? self.backgroundColor
+        guard let color = style else {
+            return
+        }
+        self.backgroundColor = UIColor(colorStyle: color)
     }
     
     func applyGradient(colors: [UIColor], orientation: GradientOrientation = .horizontal) -> Void {
