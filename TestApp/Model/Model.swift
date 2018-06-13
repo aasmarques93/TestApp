@@ -13,15 +13,18 @@ protocol Model {
     init(object: Any?)
     init(json: JSON)
     var json: JSON { get }
+    var statusMessage: String? { get set }
     func dictionaryRepresentation() -> [String: Any]
 }
 
+private let statusMessageKey = "status_message"
+
 extension Model {
-    var statusMessage: String? {
-        return json["status_message"].string
+    mutating func handleStatusMessageError() {
+        statusMessage = json[statusMessageKey].string
     }
-    
-    static var dictionaryErrorData: [String: Any] {
-        return ["status_message": Messages.serverError.localized]
-    }
+}
+
+func createModelErrorData(message: String = Messages.serverError.localized) -> [String: Any] {
+    return [statusMessageKey: message]
 }

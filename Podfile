@@ -6,20 +6,17 @@ target 'TestApp' do
 
   pod 'Moya'
   pod 'Alamofire'
-  pod 'Cache'
   pod 'Bond', '~> 6.0-beta'
   pod 'RAMAnimatedTabBarController'
   pod 'SDWebImage'
   pod 'FCAlertView'
   pod 'NVActivityIndicatorView'
   pod 'SwiftyJSON'
-  pod 'lottie-ios'
-  pod 'GhostTypewriter'
   pod 'CollectionViewSlantedLayout'
   pod 'NVActivityIndicatorView'
   pod 'ViewAnimator'
-  pod 'Hero'
-
+  pod 'SwiftKeychainWrapper'
+  
   # Pods for TestApp
 
   target 'TestAppTests' do

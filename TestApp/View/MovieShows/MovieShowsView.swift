@@ -16,6 +16,7 @@ class MovieShowsView: UICollectionViewController {
     // MARK: - View Model -
     
     var viewModel: MovieShowsViewModel?
+    private var selectedIndexPath: IndexPath?
     
     // MARK: - Life cycle -
     
@@ -29,6 +30,13 @@ class MovieShowsView: UICollectionViewController {
     private func setupViewModel() {
         viewModel?.delegate = self
         viewModel?.loadData()
+    }
+    
+    // MARK: - Segues -
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let viewController = segue.destination as? MovieShowDetailView
+        viewController?.viewModel = viewModel?.movieShowDetailViewModel(at: selectedIndexPath)
     }
 }
 
@@ -66,12 +74,13 @@ extension MovieShowsView {
 
 extension MovieShowsView {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let viewController = instantiate(viewController: MovieShowDetailView.self, from: .movieShowDetail)
-        viewController.viewModel = viewModel?.movieShowDetailViewModel(at: indexPath)
-        navigationController?.pushViewController(viewController, animated: true)
+        selectedIndexPath = indexPath
+        performSegue(withIdentifier: MovieShowDetailView.identifier, sender: self)
     }
 
-    override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    override func collectionView(_ collectionView: UICollectionView,
+                                 willDisplay cell: UICollectionViewCell,
+                                 forItemAt indexPath: IndexPath) {
         viewModel?.loadDataPaginationIfNeeded(at: indexPath)
     }
 }

@@ -176,10 +176,21 @@
                             <outlet property="delegate" destination="tRs-ck-pM1" id="zh4-0d-9Xy"/>
                         </connections>
                     </collectionView>
+                    <connections>
+                        <segue destination="z6e-nM-x5x" kind="show" identifier="MovieShowDetailView" id="khb-YK-7Fl"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fym-Ne-pRs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="969" y="337"/>
+        </scene>
+        <!--MovieShowDetail-->
+        <scene sceneID="hEe-Ro-kzb">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MovieShowDetail" id="z6e-nM-x5x" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k9B-XF-ona" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1534" y="336"/>
         </scene>
     </scenes>
 </document>

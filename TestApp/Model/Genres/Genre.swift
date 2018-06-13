@@ -10,6 +10,7 @@ import Foundation
 import SwiftyJSON
 
 struct Genre: Model {
+    var statusMessage: String?
     var json: JSON
     
     // MARK: Declaration for string constants to be used to decode and also serialize.
@@ -25,7 +26,7 @@ struct Genre: Model {
     // MARK: SwiftyJSON Initializers
     init(object: Any?) {
         guard let object = object else {
-            self.init(json: JSON(MovieShowDetail.dictionaryErrorData))
+            self.init(json: JSON(createModelErrorData()))
             return
         }
         self.init(json: JSON(object))
@@ -34,6 +35,7 @@ struct Genre: Model {
     /// Initiates the instance based on the JSON that was passed.
     init(json: JSON) {
         self.json = json
+        handleStatusMessageError()
         id = json[SerializationKeys.id].int
         name = json[SerializationKeys.name].string
     }

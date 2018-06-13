@@ -11,12 +11,13 @@ import Bond
 import ViewAnimator
 
 private let animations = [AnimationType.from(direction: .right, offset: 30.0)]
+private let rotateAnimation = AnimationType.rotate(angle: 360)
 
 class MovieShowDetailView: UITableViewController {
     // MARK: - Outlets -
     @IBOutlet var stretchHeaderView: StretchHeaderView!
     
-    @IBOutlet weak var labelAverage: UILabel!
+    @IBOutlet weak var circularProgressView: CircularProgressView!
     @IBOutlet weak var labelDate: UILabel!
     @IBOutlet weak var labelRuntime: UILabel!
     
@@ -56,7 +57,6 @@ class MovieShowDetailView: UITableViewController {
     }
     
     private func setupBindings() {
-        viewModel?.average.bind(to: labelAverage.reactive.text)
         viewModel?.date.bind(to: labelDate.reactive.text)
         viewModel?.runtime.bind(to: labelRuntime.reactive.text)
         viewModel?.genres.bind(to: textViewGenres.reactive.text)
@@ -70,7 +70,7 @@ class MovieShowDetailView: UITableViewController {
     }
     
     private func setupAnimations() {
-        UIView.animate(views: [labelAverage, labelDate, labelRuntime], animations: animations)
+        UIView.animate(views: [labelDate, labelRuntime], animations: animations)
     }
     
     // MARK: - Table view data source -
@@ -110,9 +110,11 @@ extension MovieShowDetailView: MovieShowDetailViewModelDelegate {
     
     func reloadData() {
         tableView.reloadData()
-        let cells = tableView.visibleCells(in: 0)
-        UIView.animate(views: cells, animations: animations)
         stretchHeaderView.setupHeaderView(tableView: tableView, imageUrl: viewModel?.imageUrl)
+        circularProgressView.progress = viewModel?.average ?? 0
+        
+        UIView.animate(views: [circularProgressView], animations: [rotateAnimation])
+        UIView.animate(views: tableView.visibleCells(in: 0), animations: animations)
     }
     
     func reloadRecommendedMovieShows() {

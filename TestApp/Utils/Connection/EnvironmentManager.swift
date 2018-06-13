@@ -82,19 +82,15 @@ enum RequestUrl: String {
     case popular
     case movie
     case recommendations
-    case reviews
-    case searchMovie
-    case searchTV
     case tvPopular
     case tvOnTheAir
     case tvTopRated
     case tvAiringToday
     case tvShow
     case tvRecommendations
-    case tvImages
     case genre
     case genres
-    case genresTV
+    case searchByGenre
     case test
 }
 

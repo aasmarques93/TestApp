@@ -114,7 +114,7 @@ class MovieShowDetailTests: TestCase {
     
     func testMovieShowDetail() {
         XCTAssertFalse(viewModelMovieDetail.title.value == "")
-        XCTAssertFalse(viewModelMovieDetail.average.value == "")
+        XCTAssertFalse(viewModelMovieDetail.average == 0)
         XCTAssertFalse(viewModelMovieDetail.date.value == "")
         XCTAssertFalse(viewModelMovieDetail.runtime.value == "")
         XCTAssertFalse(viewModelMovieDetail.overview.value == "")

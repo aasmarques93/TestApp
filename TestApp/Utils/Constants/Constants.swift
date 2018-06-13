@@ -12,17 +12,14 @@ enum Titles: String {
     // Button Common Titles
     case movies = "Movies"
     case tvShows = "TV Shows"
-    case roulette = "Roulette"
+    case explore = "Explore"
     case allGenres = "All Genres"
     
     // Titles
     case error = "Error"
     case success = "Success"
     case done = "OK"
-    
-    // Photo Picker
-    case photos = "All photos"
-    
+        
     var localized: String {
         return NSLocalizedString(self.rawValue, comment: "")
     }

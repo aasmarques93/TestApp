@@ -14,7 +14,7 @@ enum Storyboard: String {
     case main = "Main"
     case movieShow = "MovieShow"
     case movieShowDetail = "MovieShowDetail"
-    case roulette = "Roulette"
+    case explore = "Explore"
     case pager = "Pager"
 }
 

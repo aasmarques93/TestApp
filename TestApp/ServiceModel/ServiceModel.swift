@@ -50,7 +50,7 @@ extension ServiceModel {
                 handlerObject(object)
             } catch {
                 let printableError = error as CustomStringConvertible
-                handlerObject(printableError.description)
+                handlerObject(createModelErrorData(message: printableError.description))
             }
         }
     }

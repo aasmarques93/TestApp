@@ -21,11 +21,10 @@ class PageViewController: UIPageViewController {
     
     // MARK: - Life cycle -
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.dataSource = self
-        self.delegate = self
-        setupStartViewController()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        dataSource = self
+        delegate = self
     }
 
     // MARK: - Setup -

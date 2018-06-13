@@ -9,11 +9,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Roulette-->
+        <!--Explore-->
         <scene sceneID="G9M-ve-32O">
             <objects>
                 <navigationController id="n2N-Ms-iOK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Roulette" image="roulette" id="J74-rd-xev" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                    <tabBarItem key="tabBarItem" title="Explore" image="explore" id="J74-rd-xev" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="textColor">
                                 <color key="value" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -53,10 +53,10 @@
             </objects>
             <point key="canvasLocation" x="126" y="1077"/>
         </scene>
-        <!--Roulette-->
+        <!--Explore-->
         <scene sceneID="K9R-ro-8VW">
             <objects>
-                <viewControllerPlaceholder storyboardName="Roulette" id="e0X-HT-yT4" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Explore" id="e0X-HT-yT4" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="4Kv-rx-E0V"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wVi-ox-1UC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -174,8 +174,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="explore" width="32" height="32"/>
         <image name="movies" width="32" height="32"/>
-        <image name="roulette" width="25" height="25"/>
         <image name="tv" width="25" height="25"/>
     </resources>
 </document>

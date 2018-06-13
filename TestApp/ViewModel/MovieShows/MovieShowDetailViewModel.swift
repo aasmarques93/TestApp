@@ -15,7 +15,7 @@ protocol MovieShowDetailViewModelDelegate: ViewModelDelegate {
 class MovieShowDetailViewModel: ViewModel, LoadingProtocol {
     // MARK: - Properties -
     
-    var loading: Loading = Loading()
+    internal var loading: Loading = Loading()
     
     // MARK: Delegate
     weak var delegate: MovieShowDetailViewModelDelegate?
@@ -25,7 +25,6 @@ class MovieShowDetailViewModel: ViewModel, LoadingProtocol {
     
     // MARK: Observables
     var title = Observable<String?>(nil)
-    var average = Observable<String?>(nil)
     var date = Observable<String?>(nil)
     var runtime = Observable<String?>(nil)
     var genres = Observable<String?>(nil)
@@ -40,12 +39,15 @@ class MovieShowDetailViewModel: ViewModel, LoadingProtocol {
             
             title.value = movieShowDetail?.title ?? movieShowDetail?.originalName
             date.value = valueDescription(movieShowDetail?.releaseDate)
-            average.value = valueDescription(movieShowDetail?.voteAverage)
             runtime.value = "\(valueDescription(movieShowDetail?.runtime)) minutes"
             overview.value = valueDescription(movieShowDetail?.overview)
             
             genres.value = setupGenres()
         }
+    }
+    
+    var average: CGFloat {
+        return CGFloat(movieShowDetail?.voteAverage ?? 0) / 10
     }
     
     // MARK: Variables

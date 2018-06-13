@@ -11,22 +11,18 @@
 		8D7E6A73033DE350A8F88376 /* Pods_TestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A5F9A0ED5F664122468ECBA /* Pods_TestApp.framework */; };
 		EC313274FCEB14CE9C2B00A5 /* Pods_TestAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F2F99AC7AF7E83D746F4251 /* Pods_TestAppUITests.framework */; };
 		ED02B33320CBF037008593EC /* MovieShow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED02B32320CBF037008593EC /* MovieShow.storyboard */; };
-		ED02B33520CBF037008593EC /* Roulette.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED02B32920CBF037008593EC /* Roulette.storyboard */; };
+		ED02B33520CBF037008593EC /* Explore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED02B32920CBF037008593EC /* Explore.storyboard */; };
 		ED02B33A20CBF049008593EC /* MovieShowXibView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED02B33820CBF049008593EC /* MovieShowXibView.xib */; };
-		ED02B34C20CBF070008593EC /* RouletteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02B33D20CBF06F008593EC /* RouletteViewModel.swift */; };
 		ED02B35420CBF070008593EC /* MovieShowDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02B34920CBF070008593EC /* MovieShowDetailViewModel.swift */; };
 		ED02B35920CBF081008593EC /* StretchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02B35820CBF081008593EC /* StretchHeaderView.swift */; };
 		ED02B37C20CBF091008593EC /* MovieShowViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02B35E20CBF08F008593EC /* MovieShowViewCell.swift */; };
 		ED02B37E20CBF091008593EC /* MovieShowXibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02B36220CBF08F008593EC /* MovieShowXibView.swift */; };
 		ED02B38020CBF091008593EC /* MovieShowDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02B36420CBF08F008593EC /* MovieShowDetailView.swift */; };
-		ED02B38E20CBF091008593EC /* RouletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02B37820CBF090008593EC /* RouletteView.swift */; };
-		ED02B38F20CBF091008593EC /* RouletteFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02B37920CBF090008593EC /* RouletteFilterView.swift */; };
 		ED02B39D20CBF0BD008593EC /* MovieShowDetailServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02B39620CBF0BD008593EC /* MovieShowDetailServiceModel.swift */; };
 		ED02B3C920CBF2C2008593EC /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02B3AE20CBF2C2008593EC /* Genre.swift */; };
 		ED02B3CC20CBF2C2008593EC /* MovieShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02B3B120CBF2C2008593EC /* MovieShow.swift */; };
 		ED02B3D020CBF2C2008593EC /* MovieShowDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02B3B520CBF2C2008593EC /* MovieShowDetail.swift */; };
 		ED02B3DE20CBFBE2008593EC /* MovieShowsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02B3DD20CBFBE2008593EC /* MovieShowsViewModel.swift */; };
-		ED02B3E120CBFDBD008593EC /* RouletteServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02B3E020CBFDBD008593EC /* RouletteServiceModel.swift */; };
 		ED02B3E320CC05E2008593EC /* MovieShowsServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02B3E220CC05E2008593EC /* MovieShowsServiceModel.swift */; };
 		ED02B3E920CC07AF008593EC /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = ED02B3E520CC07AF008593EC /* iCarousel.m */; };
 		ED02B3EA20CC07AF008593EC /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02B3E820CC07AF008593EC /* CircularProgressView.swift */; };
@@ -43,6 +39,12 @@
 		ED3292A520D03E9A00D75DF2 /* recommendations.json in Resources */ = {isa = PBXBuildFile; fileRef = ED3292A420D03E6100D75DF2 /* recommendations.json */; };
 		ED3292A720D048C700D75DF2 /* LoadingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3292A620D048C700D75DF2 /* LoadingTests.swift */; };
 		ED3292AA20D04F5000D75DF2 /* ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3292A920D04F5000D75DF2 /* ModelTests.swift */; };
+		ED3D810A20D18CF900ABC22F /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3D810920D18CF900ABC22F /* ExploreView.swift */; };
+		ED3D810C20D18D1900ABC22F /* ExploreViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3D810B20D18D1900ABC22F /* ExploreViewCell.swift */; };
+		ED3D810E20D18D6000ABC22F /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3D810D20D18D6000ABC22F /* ExploreViewModel.swift */; };
+		ED3D811020D18D7A00ABC22F /* ExploreCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3D810F20D18D7A00ABC22F /* ExploreCellViewModel.swift */; };
+		ED3D811220D18D8A00ABC22F /* ExploreServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3D811120D18D8A00ABC22F /* ExploreServiceModel.swift */; };
+		ED3D811820D1A69900ABC22F /* LocalStorageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3D811720D1A69900ABC22F /* LocalStorageHelper.swift */; };
 		ED822BDE20CAB5DB00E530F7 /* EnvironmentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED822BBE20CAB5D900E530F7 /* EnvironmentManager.swift */; };
 		ED822BDF20CAB5DB00E530F7 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED822BBF20CAB5D900E530F7 /* FileManager.swift */; };
 		ED822BE020CAB5DB00E530F7 /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED822BC120CAB5D900E530F7 /* General.swift */; };
@@ -58,7 +60,6 @@
 		ED822BF620CAB9E000E530F7 /* ServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED822BF520CAB9E000E530F7 /* ServiceModel.swift */; };
 		ED822BF920CABBB100E530F7 /* RequestLinks.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED822BF720CABBB000E530F7 /* RequestLinks.plist */; };
 		ED822BFA20CABBB100E530F7 /* EnvironmentLinks.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED822BF820CABBB000E530F7 /* EnvironmentLinks.plist */; };
-		ED822C1220CAFF6E00E530F7 /* LottieHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED822C1120CAFF6D00E530F7 /* LottieHelper.swift */; };
 		ED822C1820CB512300E530F7 /* RAMTabBarUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED822C1720CB512300E530F7 /* RAMTabBarUtils.swift */; };
 		ED822C2220CB53DF00E530F7 /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED822C2020CB53DF00E530F7 /* XibView.swift */; };
 		ED89784920CF1EA100F3962B /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED89784820CF1EA100F3962B /* Color.xcassets */; };
@@ -125,22 +126,18 @@
 		CD5C46FE0A426F255E628E9C /* Pods_TestAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7536A339D3FE5F8E6BA265C /* Pods-TestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestApp/Pods-TestApp.debug.xcconfig"; sourceTree = "<group>"; };
 		ED02B32420CBF037008593EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MovieShow.storyboard; sourceTree = "<group>"; };
-		ED02B32A20CBF037008593EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Roulette.storyboard; sourceTree = "<group>"; };
+		ED02B32A20CBF037008593EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Explore.storyboard; sourceTree = "<group>"; };
 		ED02B33820CBF049008593EC /* MovieShowXibView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieShowXibView.xib; sourceTree = "<group>"; };
-		ED02B33D20CBF06F008593EC /* RouletteViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouletteViewModel.swift; sourceTree = "<group>"; };
 		ED02B34920CBF070008593EC /* MovieShowDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieShowDetailViewModel.swift; sourceTree = "<group>"; };
 		ED02B35820CBF081008593EC /* StretchHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StretchHeaderView.swift; sourceTree = "<group>"; };
 		ED02B35E20CBF08F008593EC /* MovieShowViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieShowViewCell.swift; sourceTree = "<group>"; };
 		ED02B36220CBF08F008593EC /* MovieShowXibView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieShowXibView.swift; sourceTree = "<group>"; };
 		ED02B36420CBF08F008593EC /* MovieShowDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieShowDetailView.swift; sourceTree = "<group>"; };
-		ED02B37820CBF090008593EC /* RouletteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouletteView.swift; sourceTree = "<group>"; };
-		ED02B37920CBF090008593EC /* RouletteFilterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouletteFilterView.swift; sourceTree = "<group>"; };
 		ED02B39620CBF0BD008593EC /* MovieShowDetailServiceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieShowDetailServiceModel.swift; sourceTree = "<group>"; };
 		ED02B3AE20CBF2C2008593EC /* Genre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 		ED02B3B120CBF2C2008593EC /* MovieShow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieShow.swift; sourceTree = "<group>"; };
 		ED02B3B520CBF2C2008593EC /* MovieShowDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieShowDetail.swift; sourceTree = "<group>"; };
 		ED02B3DD20CBFBE2008593EC /* MovieShowsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieShowsViewModel.swift; sourceTree = "<group>"; };
-		ED02B3E020CBFDBD008593EC /* RouletteServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouletteServiceModel.swift; sourceTree = "<group>"; };
 		ED02B3E220CC05E2008593EC /* MovieShowsServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieShowsServiceModel.swift; sourceTree = "<group>"; };
 		ED02B3E520CC07AF008593EC /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
 		ED02B3E620CC07AF008593EC /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
@@ -159,6 +156,12 @@
 		ED3292A420D03E6100D75DF2 /* recommendations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = recommendations.json; sourceTree = "<group>"; };
 		ED3292A620D048C700D75DF2 /* LoadingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTests.swift; sourceTree = "<group>"; };
 		ED3292A920D04F5000D75DF2 /* ModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTests.swift; sourceTree = "<group>"; };
+		ED3D810920D18CF900ABC22F /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
+		ED3D810B20D18D1900ABC22F /* ExploreViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewCell.swift; sourceTree = "<group>"; };
+		ED3D810D20D18D6000ABC22F /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
+		ED3D810F20D18D7A00ABC22F /* ExploreCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCellViewModel.swift; sourceTree = "<group>"; };
+		ED3D811120D18D8A00ABC22F /* ExploreServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreServiceModel.swift; sourceTree = "<group>"; };
+		ED3D811720D1A69900ABC22F /* LocalStorageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStorageHelper.swift; sourceTree = "<group>"; };
 		ED822BBE20CAB5D900E530F7 /* EnvironmentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentManager.swift; sourceTree = "<group>"; };
 		ED822BBF20CAB5D900E530F7 /* FileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		ED822BC120CAB5D900E530F7 /* General.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = General.swift; sourceTree = "<group>"; };
@@ -174,7 +177,6 @@
 		ED822BF520CAB9E000E530F7 /* ServiceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceModel.swift; sourceTree = "<group>"; };
 		ED822BF720CABBB000E530F7 /* RequestLinks.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RequestLinks.plist; sourceTree = "<group>"; };
 		ED822BF820CABBB000E530F7 /* EnvironmentLinks.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EnvironmentLinks.plist; sourceTree = "<group>"; };
-		ED822C1120CAFF6D00E530F7 /* LottieHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieHelper.swift; sourceTree = "<group>"; };
 		ED822C1720CB512300E530F7 /* RAMTabBarUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMTabBarUtils.swift; sourceTree = "<group>"; };
 		ED822C2020CB53DF00E530F7 /* XibView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XibView.swift; sourceTree = "<group>"; };
 		ED89784820CF1EA100F3962B /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
@@ -281,20 +283,12 @@
 			path = "Movie & TVShow";
 			sourceTree = "<group>";
 		};
-		ED02B32620CBF037008593EC /* Roulette */ = {
+		ED02B32620CBF037008593EC /* Explore */ = {
 			isa = PBXGroup;
 			children = (
-				ED02B32920CBF037008593EC /* Roulette.storyboard */,
+				ED02B32920CBF037008593EC /* Explore.storyboard */,
 			);
-			path = Roulette;
-			sourceTree = "<group>";
-		};
-		ED02B33C20CBF06F008593EC /* Roulette */ = {
-			isa = PBXGroup;
-			children = (
-				ED02B33D20CBF06F008593EC /* RouletteViewModel.swift */,
-			);
-			path = Roulette;
+			path = Explore;
 			sourceTree = "<group>";
 		};
 		ED02B34820CBF070008593EC /* MovieShows */ = {
@@ -337,13 +331,13 @@
 			path = Detail/XIB;
 			sourceTree = "<group>";
 		};
-		ED02B37720CBF090008593EC /* Roulette */ = {
+		ED02B37720CBF090008593EC /* Explore */ = {
 			isa = PBXGroup;
 			children = (
-				ED02B37820CBF090008593EC /* RouletteView.swift */,
-				ED02B37920CBF090008593EC /* RouletteFilterView.swift */,
+				ED3D810920D18CF900ABC22F /* ExploreView.swift */,
+				ED3D810B20D18D1900ABC22F /* ExploreViewCell.swift */,
 			);
-			path = Roulette;
+			path = Explore;
 			sourceTree = "<group>";
 		};
 		ED02B39520CBF0BD008593EC /* MovieShows */ = {
@@ -374,12 +368,12 @@
 			path = Genres;
 			sourceTree = "<group>";
 		};
-		ED02B3DF20CBFDA4008593EC /* Roulette */ = {
+		ED02B3DF20CBFDA4008593EC /* Explore */ = {
 			isa = PBXGroup;
 			children = (
-				ED02B3E020CBFDBD008593EC /* RouletteServiceModel.swift */,
+				ED3D811120D18D8A00ABC22F /* ExploreServiceModel.swift */,
 			);
-			path = Roulette;
+			path = Explore;
 			sourceTree = "<group>";
 		};
 		ED02B3E420CC07AF008593EC /* iCarousel */ = {
@@ -425,6 +419,23 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		ED3D810820D18A4C00ABC22F /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				ED3D810D20D18D6000ABC22F /* ExploreViewModel.swift */,
+				ED3D810F20D18D7A00ABC22F /* ExploreCellViewModel.swift */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
+		ED3D811620D1A69900ABC22F /* LocalStorageHelper */ = {
+			isa = PBXGroup;
+			children = (
+				ED3D811720D1A69900ABC22F /* LocalStorageHelper.swift */,
+			);
+			path = LocalStorageHelper;
+			sourceTree = "<group>";
+		};
 		ED822BAF20CAB4DD00E530F7 /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
@@ -439,7 +450,7 @@
 			children = (
 				ED822C1C20CB539000E530F7 /* Utils */,
 				ED02B35A20CBF08F008593EC /* MovieShows */,
-				ED02B37720CBF090008593EC /* Roulette */,
+				ED02B37720CBF090008593EC /* Explore */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -449,7 +460,7 @@
 			children = (
 				ED822BF520CAB9E000E530F7 /* ServiceModel.swift */,
 				ED02B39520CBF0BD008593EC /* MovieShows */,
-				ED02B3DF20CBFDA4008593EC /* Roulette */,
+				ED02B3DF20CBFDA4008593EC /* Explore */,
 			);
 			path = ServiceModel;
 			sourceTree = "<group>";
@@ -460,7 +471,7 @@
 				ED822BF320CAB9D900E530F7 /* ViewModel.swift */,
 				EDE9C8D720CDA0DD009D1C64 /* Utils */,
 				ED02B34820CBF070008593EC /* MovieShows */,
-				ED02B33C20CBF06F008593EC /* Roulette */,
+				ED3D810820D18A4C00ABC22F /* Explore */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -478,7 +489,7 @@
 		ED822BB420CAB51D00E530F7 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				ED822C1020CAFF5F00E530F7 /* LottieHelper */,
+				ED3D811620D1A69900ABC22F /* LocalStorageHelper */,
 				ED822BD820CAB5DB00E530F7 /* Alert & Picker */,
 				ED822BD220CAB5DA00E530F7 /* Color */,
 				ED822BBD20CAB5D900E530F7 /* Connection */,
@@ -496,7 +507,7 @@
 			children = (
 				EDE9C8CD20CD39EB009D1C64 /* Utils */,
 				ED02B32020CBF037008593EC /* Movie & TVShow */,
-				ED02B32620CBF037008593EC /* Roulette */,
+				ED02B32620CBF037008593EC /* Explore */,
 				EDF53EBA20CAB21200542DBF /* Main.storyboard */,
 				EDF53EBF20CAB21300542DBF /* LaunchScreen.storyboard */,
 			);
@@ -535,7 +546,14 @@
 		ED822BB920CAB57C00E530F7 /* Json */ = {
 			isa = PBXGroup;
 			children = (
-				ED89784A20CF66D200F3962B /* MovieShows */,
+				ED89784E20CF66E900F3962B /* movie.json */,
+				ED3292A220D03BBC00D75DF2 /* tvShow.json */,
+				ED89785020CF66EA00F3962B /* popular.json */,
+				ED3292A020D0282F00D75DF2 /* nowPlaying.json */,
+				ED3292A420D03E6100D75DF2 /* recommendations.json */,
+				ED32929420CFDBAD00D75DF2 /* tvRecommendations.json */,
+				EDCEF86120D0724A009CDE06 /* genre.json */,
+				ED89784F20CF66E900F3962B /* genres.json */,
 			);
 			path = Json;
 			sourceTree = "<group>";
@@ -607,14 +625,6 @@
 			path = "Alert & Picker";
 			sourceTree = "<group>";
 		};
-		ED822C1020CAFF5F00E530F7 /* LottieHelper */ = {
-			isa = PBXGroup;
-			children = (
-				ED822C1120CAFF6D00E530F7 /* LottieHelper.swift */,
-			);
-			path = LottieHelper;
-			sourceTree = "<group>";
-		};
 		ED822C1620CB512300E530F7 /* RAMTabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -650,21 +660,6 @@
 				ED89784820CF1EA100F3962B /* Color.xcassets */,
 			);
 			path = Assets;
-			sourceTree = "<group>";
-		};
-		ED89784A20CF66D200F3962B /* MovieShows */ = {
-			isa = PBXGroup;
-			children = (
-				ED89784E20CF66E900F3962B /* movie.json */,
-				ED3292A220D03BBC00D75DF2 /* tvShow.json */,
-				ED89785020CF66EA00F3962B /* popular.json */,
-				ED3292A020D0282F00D75DF2 /* nowPlaying.json */,
-				ED3292A420D03E6100D75DF2 /* recommendations.json */,
-				ED32929420CFDBAD00D75DF2 /* tvRecommendations.json */,
-				EDCEF86120D0724A009CDE06 /* genre.json */,
-				ED89784F20CF66E900F3962B /* genres.json */,
-			);
-			path = MovieShows;
 			sourceTree = "<group>";
 		};
 		ED89785420CF686400F3962B /* MovieShows */ = {
@@ -931,7 +926,7 @@
 				EDE9C8DF20CECFBB009D1C64 /* Localizable.strings in Resources */,
 				EDE9C8E620CEE370009D1C64 /* MovieShowDetail.storyboard in Resources */,
 				EDF53EBC20CAB21200542DBF /* Main.storyboard in Resources */,
-				ED02B33520CBF037008593EC /* Roulette.storyboard in Resources */,
+				ED02B33520CBF037008593EC /* Explore.storyboard in Resources */,
 				ED89785220CF66EB00F3962B /* genres.json in Resources */,
 				ED02B33A20CBF049008593EC /* MovieShowXibView.xib in Resources */,
 				ED02B33320CBF037008593EC /* MovieShow.storyboard in Resources */,
@@ -982,41 +977,35 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-TestApp/Pods-TestApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bond/Bond.framework",
-				"${BUILT_PRODUCTS_DIR}/Cache/Cache.framework",
 				"${BUILT_PRODUCTS_DIR}/CollectionViewSlantedLayout/CollectionViewSlantedLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/Differ/Differ.framework",
 				"${BUILT_PRODUCTS_DIR}/FCAlertView/FCAlertView.framework",
-				"${BUILT_PRODUCTS_DIR}/GhostTypewriter/GhostTypewriter.framework",
-				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/RAMAnimatedTabBarController/RAMAnimatedTabBarController.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveKit/ReactiveKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/ViewAnimator/ViewAnimator.framework",
-				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bond.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CollectionViewSlantedLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differ.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FCAlertView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GhostTypewriter.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RAMAnimatedTabBarController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ViewAnimator.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1069,7 +1058,10 @@
 				ED02B37C20CBF091008593EC /* MovieShowViewCell.swift in Sources */,
 				ED822BF220CAB9CD00E530F7 /* Model.swift in Sources */,
 				ED822BEB20CAB5DB00E530F7 /* ColorStyle.swift in Sources */,
+				ED3D811820D1A69900ABC22F /* LocalStorageHelper.swift in Sources */,
+				ED3D811220D18D8A00ABC22F /* ExploreServiceModel.swift in Sources */,
 				ED02B3FB20CC5057008593EC /* MovieShowsView.swift in Sources */,
+				ED3D810C20D18D1900ABC22F /* ExploreViewCell.swift in Sources */,
 				EDE9C8D620CD8002009D1C64 /* MovieShowsContainerViewModel.swift in Sources */,
 				ED822BE320CAB5DB00E530F7 /* Extensions.swift in Sources */,
 				ED822BE120CAB5DB00E530F7 /* JSONWrapper.swift in Sources */,
@@ -1077,26 +1069,24 @@
 				EDE9C8D920CDA0EB009D1C64 /* PagerViewModel.swift in Sources */,
 				ED02B3EA20CC07AF008593EC /* CircularProgressView.swift in Sources */,
 				ED02B35920CBF081008593EC /* StretchHeaderView.swift in Sources */,
+				ED3D810A20D18CF900ABC22F /* ExploreView.swift in Sources */,
 				EDE9C8D420CD7155009D1C64 /* MovieShowsContainerView.swift in Sources */,
 				ED822BEF20CAB5DB00E530F7 /* AlertController.swift in Sources */,
-				ED02B34C20CBF070008593EC /* RouletteViewModel.swift in Sources */,
 				EDE9C8CA20CD3801009D1C64 /* PagerView.swift in Sources */,
 				ED02B3E320CC05E2008593EC /* MovieShowsServiceModel.swift in Sources */,
 				ED822BE020CAB5DB00E530F7 /* General.swift in Sources */,
 				ED822BDF20CAB5DB00E530F7 /* FileManager.swift in Sources */,
 				ED822BF620CAB9E000E530F7 /* ServiceModel.swift in Sources */,
+				ED3D811020D18D7A00ABC22F /* ExploreCellViewModel.swift in Sources */,
 				ED02B35420CBF070008593EC /* MovieShowDetailViewModel.swift in Sources */,
 				ED02B3FD20CC52E4008593EC /* MovieShowsList.swift in Sources */,
 				ED02B3E920CC07AF008593EC /* iCarousel.m in Sources */,
 				ED02B3D020CBF2C2008593EC /* MovieShowDetail.swift in Sources */,
 				ED822C1820CB512300E530F7 /* RAMTabBarUtils.swift in Sources */,
 				EDE9C8CC20CD38E1009D1C64 /* PagerViewCell.swift in Sources */,
-				ED02B3E120CBFDBD008593EC /* RouletteServiceModel.swift in Sources */,
-				ED822C1220CAFF6E00E530F7 /* LottieHelper.swift in Sources */,
 				ED02B3C920CBF2C2008593EC /* Genre.swift in Sources */,
 				EDE9C8D220CD52AB009D1C64 /* PageViewController.swift in Sources */,
 				ED822BE920CAB5DB00E530F7 /* Messages.swift in Sources */,
-				ED02B38F20CBF091008593EC /* RouletteFilterView.swift in Sources */,
 				ED822BF420CAB9D900E530F7 /* ViewModel.swift in Sources */,
 				ED02B3CC20CBF2C2008593EC /* MovieShow.swift in Sources */,
 				ED822BE620CAB5DB00E530F7 /* Appearance.swift in Sources */,
@@ -1107,8 +1097,8 @@
 				EDE9C8DC20CE89B1009D1C64 /* LoadingView.swift in Sources */,
 				ED822BE820CAB5DB00E530F7 /* Constants.swift in Sources */,
 				EDCEF86020D07184009CDE06 /* GenresList.swift in Sources */,
-				ED02B38E20CBF091008593EC /* RouletteView.swift in Sources */,
 				ED02B37E20CBF091008593EC /* MovieShowXibView.swift in Sources */,
+				ED3D810E20D18D6000ABC22F /* ExploreViewModel.swift in Sources */,
 				ED02B3DE20CBFBE2008593EC /* MovieShowsViewModel.swift in Sources */,
 				ED822BDE20CAB5DB00E530F7 /* EnvironmentManager.swift in Sources */,
 			);
@@ -1172,12 +1162,12 @@
 			name = MovieShow.storyboard;
 			sourceTree = "<group>";
 		};
-		ED02B32920CBF037008593EC /* Roulette.storyboard */ = {
+		ED02B32920CBF037008593EC /* Explore.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				ED02B32A20CBF037008593EC /* Base */,
 			);
-			name = Roulette.storyboard;
+			name = Explore.storyboard;
 			sourceTree = "<group>";
 		};
 		EDE9C8E120CECFBB009D1C64 /* Localizable.strings */ = {
@@ -1331,7 +1321,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XXT2XJVDAC;
 				INFOPLIST_FILE = "$(SRCROOT)/TestApp/Supporting Files/Plists/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.aasmarques.TestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "TestApp/Utils/TestApp-Bridging-Header.h";
@@ -1348,7 +1341,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XXT2XJVDAC;
 				INFOPLIST_FILE = "$(SRCROOT)/TestApp/Supporting Files/Plists/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.aasmarques.TestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "TestApp/Utils/TestApp-Bridging-Header.h";
@@ -1366,7 +1362,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XXT2XJVDAC;
 				INFOPLIST_FILE = TestAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.aasmarques.TestAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1384,7 +1384,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XXT2XJVDAC;
 				INFOPLIST_FILE = TestAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.aasmarques.TestAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1401,7 +1405,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XXT2XJVDAC;
 				INFOPLIST_FILE = TestAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.aasmarques.TestAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1418,7 +1426,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XXT2XJVDAC;
 				INFOPLIST_FILE = TestAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.aasmarques.TestAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

@@ -26,15 +26,22 @@ class MovieShowsContainerView: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupAppearance()
-        setupViewModel()
-        setupPagerView()
-        setupPageViewController()
+        setupContent()
     }
     
     // MARK: - Setup -
     
     func setupAppearance() {
         setTitleView(text: isMoviesTab ? Titles.movies.localized : Titles.tvShows.localized)
+    }
+    
+    func setupContent() {
+        guard viewModel == nil else {
+            return
+        }
+        setupViewModel()
+        setupPagerView()
+        setupPageViewController()
     }
     
     private func setupViewModel() {
@@ -49,6 +56,7 @@ class MovieShowsContainerView: UIViewController {
     func setupPageViewController() {
         pageViewController?.pageViewControllerDelegate = self
         pageViewController?.viewModel = viewModel
+        pageViewController?.setupStartViewController()
     }
     
     // MARK: - Segues -
