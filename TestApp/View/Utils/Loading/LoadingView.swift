@@ -26,15 +26,9 @@ fileprivate class LoadingView: UIView {
         
         return activityIndicator
     }
-
-    init(frame: CGRect = .zero, backgroundColor: UIColor? = nil) {
-        super.init(frame: frame)
-        self.backgroundColor = backgroundColor ?? UIColor(colorStyle: .primary).withAlphaComponent(alphaBackground)
-        self.addSubview(activityIndicator)
-    }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    func addActivityIndicator() {
+        addSubview(activityIndicator)
     }
     
     func startInWindow() {
@@ -56,13 +50,20 @@ protocol LoadingProtocol {
 struct Loading {
     fileprivate var loadingView: LoadingView?
     
+    var frame: CGRect? { return loadingView?.frame }
+    
     mutating func start(backgroundColor: UIColor? = nil) {
-        loadingView = LoadingView(frame: AppDelegate.shared.window?.frame ?? .zero,
-                                  backgroundColor: backgroundColor)
+        loadingView = LoadingView(frame: AppDelegate.shared.window?.frame ?? .zero)
+        loadingView?.backgroundColor = backgroundColor ?? UIColor(colorStyle: .primary).withAlphaComponent(alphaBackground)
+        loadingView?.addActivityIndicator()
         loadingView?.startInWindow()
     }
     
     func stop() {
         loadingView?.stop()
+    }
+    
+    func hasLoadingError() -> Bool {
+        return loadingView == nil
     }
 }

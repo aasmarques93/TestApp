@@ -32,7 +32,7 @@ class RouletteViewModel: ViewModel {
     var overviewResult = Observable<String?>(nil)
     
     // MARK: Objects
-    private var arrayGenres = [Genres]()
+    private var arrayGenres = [Genre]()
     
     private var arrayGenresTitles: [String] {
         var array = [Titles.allGenres.localized]

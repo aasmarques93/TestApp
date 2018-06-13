@@ -30,20 +30,10 @@ extension ViewModel {
     
     // Show error if object has returno status message
     func throwError(with object: Model) throws {
-        if let statusMessage = object.statusMessage, statusMessage != "" {
-            throw Error(message: statusMessage)
-        }
-        
-        guard let json = object.json else {
+        guard let statusMessage = object.statusMessage, statusMessage != "" else {
             return
         }
-        
-        let statusMessage = json["status_message"]
-        guard let message = statusMessage["message"].string else {
-            return
-        }
-        
-        throw Error(message: message)
+        throw Error(message: statusMessage)
     }    
 }
 

@@ -13,7 +13,7 @@
         <!--Pager View-->
         <scene sceneID="xlW-ax-Vu2">
             <objects>
-                <viewController id="gZU-95-fpq" customClass="PagerView" customModule="TestApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PagerView" id="gZU-95-fpq" customClass="PagerView" customModule="TestApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oEO-YX-D8F"/>
                         <viewControllerLayoutGuide type="bottom" id="SbX-HQ-eiP"/>

@@ -29,7 +29,7 @@ class PagerView: UIViewController {
     var viewModel: PagerViewModel?
     
     // MARK: - Properties -
-    private var currentIndexPath: IndexPath?
+    var currentIndexPath: IndexPath?
     
     // MARK: - Life cycle -
     
@@ -67,18 +67,22 @@ class PagerView: UIViewController {
         cell.labelTitle.textColor = UIColor(colorStyle: .secondary)
         collectionView.reloadData()
 
-        func changeFrame() {
-            viewIndicator.frame = CGRect(x: cell.frame.minX,
-                                         y: viewIndicator.frame.minY,
-                                         width: cell.frame.width,
-                                         height: viewIndicator.frame.height)
-        }
+        let rect = CGRect(x: cell.frame.minX,
+                          y: viewIndicator.frame.minY,
+                          width: cell.frame.width,
+                          height: viewIndicator.frame.height)
         
         if animated {
-            UIView.animate(withDuration: 0.3, animations: { changeFrame() })
+            UIView.animate(withDuration: 0.3, animations: {
+                self.changeFrame(rect)
+            })
         } else {
-            changeFrame()
+            changeFrame(rect)
         }
+    }
+    
+    private func changeFrame(_ rect: CGRect) {
+        viewIndicator.frame = rect
     }
 }
 
@@ -107,8 +111,8 @@ extension PagerView: UICollectionViewDelegate {
         guard currentIndexPath != indexPath else {
             return
         }
-        selectItem(at: indexPath)
         delegate?.didSelect(at: indexPath)
+        selectItem(at: indexPath)
     }
 }
 

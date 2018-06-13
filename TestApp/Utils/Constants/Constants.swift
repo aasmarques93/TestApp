@@ -8,11 +8,6 @@
 
 import Foundation
 
-struct Constants {
-    static let defaultDateFormat = "dd/MM/yyyy"
-    static let dateFormatIsoTime = "yyyy-MM-dd'T'hh:ss:mm"
-}
-
 enum Titles: String {
     // Button Common Titles
     case movies = "Movies"

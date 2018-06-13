@@ -15,6 +15,7 @@ enum Storyboard: String {
     case movieShow = "MovieShow"
     case movieShowDetail = "MovieShowDetail"
     case roulette = "Roulette"
+    case pager = "Pager"
 }
 
 var currentNavigationController: UINavigationController?

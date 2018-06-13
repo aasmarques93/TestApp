@@ -31,16 +31,14 @@ class PageViewController: UIPageViewController {
     // MARK: - Setup -
     
     func setupStartViewController(index: Int = 0) {
-        guard let viewController = createViewController(index: index) else {
-            return
-        }
+        let viewController = createViewController(index: index)
         self.setViewControllers([viewController],
                                 direction: index > getCurrentPageIndex() ? .forward : .reverse,
                                 animated: true,
                                 completion: nil)
     }
     
-    private func createViewController(index: Int) -> UIViewController? {
+    func createViewController(index: Int) -> UIViewController {
         let viewController = instantiate(viewController: MovieShowsView.self, from: .movieShow)
         viewController.pageIndex = index
         viewController.viewModel = viewModel?.movieShowsViewModel(at: index)

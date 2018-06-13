@@ -18,7 +18,7 @@ target 'TestApp' do
   pod 'CollectionViewSlantedLayout'
   pod 'NVActivityIndicatorView'
   pod 'ViewAnimator'
-  pod 'ZoomTransitioning'
+  pod 'Hero'
 
   # Pods for TestApp
 

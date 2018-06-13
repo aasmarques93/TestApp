@@ -10,23 +10,18 @@ import Foundation
 import SwiftyJSON
 
 protocol Model {
-    var json: JSON? { get }
-    init(object: Any)
-    init(json: JSON?)
+    init(object: Any?)
+    init(json: JSON)
+    var json: JSON { get }
+    func dictionaryRepresentation() -> [String: Any]
 }
 
 extension Model {
     var statusMessage: String? {
-        if let json = json {
-            return json["status_message"].string
-        }
-        return nil
+        return json["status_message"].string
     }
     
-    static func createObject<T: Model>(with data: Any?) -> T {
-        guard let object = data else {
-            return T(object: ["statusMessage": Messages.serverError.localized])
-        }
-        return T(object: object)
+    static var dictionaryErrorData: [String: Any] {
+        return ["status_message": Messages.serverError.localized]
     }
 }

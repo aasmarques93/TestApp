@@ -19,8 +19,8 @@ class CircularProgressView: UIView {
     // progress: Should be between 0 to 1
     @IBInspectable var progress: CGFloat = 0 { didSet { setNeedsDisplay() } }
     
-    private var circleStrokeWidth: CGFloat = 5
-    private var circleStrokeColor = DefaultColor.circleStrokeColor
+    var circleStrokeWidth: CGFloat = 5
+    var circleStrokeColor = DefaultColor.circleStrokeColor
     private var circleFillColor = DefaultColor.circleFillColor
     private var progressCircleStrokeColor = DefaultColor.progressCircleStrokeColor
     private var progressCircleFillColor = DefaultColor.progressCircleFillColor

@@ -34,7 +34,7 @@
 	<string>/tv/latest?language={language}&amp;</string>
 	<key>tvAiringToday</key>
 	<string>/tv/airing_today?language={language}&amp;page={page}&amp;</string>
-	<key>tvDetail</key>
+	<key>tvShow</key>
 	<string>/tv/{id}?language={language}&amp;</string>
 	<key>tvRecommendations</key>
 	<string>/tv/{id}/recommendations?language={language}&amp;</string>

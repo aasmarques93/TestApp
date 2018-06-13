@@ -12,12 +12,12 @@ class StretchHeaderView: UIView {
     private var imageViewHeader = UIImageView()
     private var activityIndicator = UIActivityIndicatorView()
     
-    private var minHeightPercentual: CGFloat = 0, maxHeightPercentual: CGFloat = 0
+    private var minHeightPercentual: CGFloat = 0, maxHeightPercentual: CGFloat = 1.0
     
     func setupHeaderView(tableView: UITableView,
                          imageUrl: URL? = nil,
                          minHeightPercentual: CGFloat = 0,
-                         maxHeightPercentual: CGFloat = 1) {
+                         maxHeightPercentual: CGFloat = 0.5) {
         
         self.minHeightPercentual = minHeightPercentual
         self.maxHeightPercentual = maxHeightPercentual

@@ -8,7 +8,11 @@
 
 import Moya
 
-// MARK: - Environment Base Enum -
+struct EnvironmentManager {
+    static var shared = EnvironmentManager()
+    var current: EnvironmentBase = .theMovieDB
+}
+
 enum EnvironmentBase: String {
     case theMovieDB
     case imagesTheMovieDB
@@ -20,18 +24,16 @@ enum EnvironmentBase: String {
 }
 
 struct RequestBase {
-    var requestUrl: RequestUrl?
+    var requestUrl: RequestUrl
     var environmentBase: EnvironmentBase
-    var customPath: String?
     var moyaMethod: Moya.Method
     var urlParameters: [String: Any]?
     var parameters: [String: Any]?
     var data: Data
     var requestHeaders: [String: String]?
     
-    init(requestUrl: RequestUrl? = nil,
+    init(requestUrl: RequestUrl,
          environmentBase: EnvironmentBase,
-         customPath: String? = nil,
          method: Moya.Method,
          urlParameters: [String: Any]? = nil,
          parameters: [String: Any]? = nil,
@@ -40,7 +42,6 @@ struct RequestBase {
         
         self.requestUrl = requestUrl
         self.environmentBase = environmentBase
-        self.customPath = customPath
         self.moyaMethod = method
         self.urlParameters = urlParameters
         self.parameters = parameters
@@ -51,13 +52,10 @@ struct RequestBase {
 
 extension RequestBase: TargetType {
     var baseURL: URL {
-        return URL(string: environmentBase.path) ?? URL(string: "")!
+        return URL(string: environmentBase.path)!
     }
     var path: String {
-        guard let customPath = customPath else {
-            return requestUrl?.url(environmentBase: environmentBase, parameters: urlParameters) ?? ""
-        }
-        return customPath
+        return requestUrl.url(environmentBase: environmentBase, parameters: urlParameters)
     }
     var method: Moya.Method {
         return moyaMethod
@@ -76,7 +74,6 @@ extension RequestBase: TargetType {
     }
 }
 
-// MARK: - Request Link Enum -
 enum RequestUrl: String {
     case apiKey
     case nowPlaying
@@ -92,11 +89,13 @@ enum RequestUrl: String {
     case tvOnTheAir
     case tvTopRated
     case tvAiringToday
-    case tvDetail
+    case tvShow
     case tvRecommendations
     case tvImages
+    case genre
     case genres
     case genresTV
+    case test
 }
 
 extension RequestUrl {

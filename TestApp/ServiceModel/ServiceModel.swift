@@ -25,7 +25,7 @@ extension ServiceModel {
     
     func request(method: Moya.Method = .get,
                  requestUrl: RequestUrl,
-                 environmentBase: EnvironmentBase = .theMovieDB,
+                 environmentBase: EnvironmentBase = EnvironmentManager.shared.current,
                  parameters: [String: Any]? = nil,
                  urlParameters: [String: Any]? = nil,
                  handlerObject: @escaping HandlerObject) {
@@ -46,23 +46,20 @@ extension ServiceModel {
             do {
                 let response = try result.dematerialize()
                 let json = try response.mapJSON()
-                
-                guard let array = json as? [Any] else {
-                    handlerObject(JSON(json))
-                    return
-                }
-                
-                var arrayObject = [JSON]()
-                array.forEach({ (object) in
-                    arrayObject.append(JSON(object))
-                })
-                
-                handlerObject(arrayObject)
+                let object = self.handleJsonResponse(json: json)
+                handlerObject(object)
             } catch {
                 let printableError = error as CustomStringConvertible
                 handlerObject(printableError.description)
             }
         }
+    }
+    
+    func handleJsonResponse(json: Any) -> Any {
+        guard let array = json as? [Any] else {
+            return JSON(json)
+        }
+        return array.map { JSON($0) }
     }
     
     private func handleMockJson(requestUrl: RequestUrl, handlerObject: @escaping HandlerObject) {

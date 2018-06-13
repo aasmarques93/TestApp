@@ -21,8 +21,7 @@
         <!--Movie Shows Container View-->
         <scene sceneID="i0V-qU-SIc">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2A5-by-Inp" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="Cde-3o-4QX" customClass="MovieShowsContainerView" customModule="TestApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MovieShowsContainerView" id="Cde-3o-4QX" customClass="MovieShowsContainerView" customModule="TestApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PXU-8A-hCw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -59,16 +58,17 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="Naw-rs-eN8"/>
                     </navigationItem>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2A5-by-Inp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-566" y="337"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="MF3-cn-oAv">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WTf-cj-S4l" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="q1s-N1-Kxu" customClass="PageViewController" customModule="TestApp" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="q1s-N1-Kxu" customClass="PageViewController" customModule="TestApp" customModuleProvider="target" sceneMemberID="viewController">
                     <size key="freeformSize" width="375" height="667"/>
                 </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WTf-cj-S4l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="209" y="337"/>
         </scene>

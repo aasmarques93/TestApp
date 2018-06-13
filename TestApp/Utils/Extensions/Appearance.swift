@@ -8,6 +8,13 @@
 
 import UIKit
 
+var SCREEN_WIDTH: CGFloat {
+    return UIScreen.main.bounds.width
+}
+var SCREEN_HEIGHT: CGFloat {
+    return AppDelegate.shared.window!.frame.height
+}
+
 extension UINavigationController {
     open override func awakeFromNib() {
         navigationBar.barTintColor = UIColor(colorStyle: .primary)
@@ -44,78 +51,9 @@ extension UITabBar {
     }
 }
 
-extension UIImage {
-    func imageResize(sizeChange: CGSize) -> UIImage {
-        let hasAlpha = true
-        let scale: CGFloat = 0.0 // Use scale factor of main screen
-        
-        UIGraphicsBeginImageContextWithOptions(sizeChange, !hasAlpha, scale)
-        self.draw(in: CGRect(origin: CGPoint.zero, size: sizeChange))
-        
-        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
-        return scaledImage!
-    }
-}
-
-extension CAGradientLayer {
-    convenience init(frame: CGRect, colors: [UIColor]) {
-        self.init()
-        self.frame = frame
-        self.colors = []
-        colors.forEach { (color) in
-            self.colors?.append(color.cgColor)
-        }
-        startPoint = CGPoint(x: 0, y: 0)
-        endPoint = CGPoint(x: 1, y: 0)
-    }
-    
-    func creatGradientImage() -> UIImage? {
-        var image: UIImage? = nil
-        UIGraphicsBeginImageContext(bounds.size)
-        if let context = UIGraphicsGetCurrentContext() {
-            render(in: context)
-            image = UIGraphicsGetImageFromCurrentImageContext()
-        }
-        UIGraphicsEndImageContext()
-        return image
-    }
-}
-
 extension UITabBarController {
     open override func awakeFromNib() {
         tabBar.tintColor = UIColor(colorStyle: .primary)
-    }
-}
-
-typealias GradientPoints = (startPoint: CGPoint, endPoint: CGPoint)
-
-enum GradientOrientation {
-    case topRightBottomLeft
-    case topLeftBottomRight
-    case horizontal
-    case vertical
-    
-    var startPoint: CGPoint {
-        return points.startPoint
-    }
-    
-    var endPoint: CGPoint {
-        return points.endPoint
-    }
-    
-    var points: GradientPoints {
-        get {
-            switch(self) {
-            case .topRightBottomLeft:
-                return (CGPoint(x: 0.0,y: 1.0), CGPoint(x: 1.0,y: 0.0))
-            case .topLeftBottomRight:
-                return (CGPoint(x: 0.0,y: 0.0), CGPoint(x: 1,y: 1))
-            case .horizontal:
-                return (CGPoint(x: 0.0,y: 0.5), CGPoint(x: 1.0,y: 0.5))
-            case .vertical:
-                return (CGPoint(x: 0.0,y: 0.0), CGPoint(x: 0.0,y: 1.0))
-            }
-        }
     }
 }
 
@@ -151,7 +89,6 @@ extension UIView {
         }
         if let textField = self as? UITextField {
             textField.textColor = UIColor(colorStyle: style ?? .text)
-            textField.placeHolderColor = UIColor(colorStyle: style ?? .text)
             return
         }
         if let textView = self as? UITextView {
@@ -189,78 +126,6 @@ extension UIView {
         }
         self.backgroundColor = UIColor(colorStyle: color)
     }
-    
-    func applyGradient(colors: [UIColor], orientation: GradientOrientation = .horizontal) -> Void {
-        let gradient = CAGradientLayer()
-        gradient.frame = CGRect(x: 0, y: 0, width: self.bounds.width, height: self.bounds.height)
-        gradient.colors = colors.map { $0.cgColor }
-        gradient.startPoint = orientation.startPoint
-        gradient.endPoint = orientation.endPoint
-        layer.insertSublayer(gradient, at: 0)
-    }
-    
-    func removeGradient() {
-        guard let sublayers = layer.sublayers else {
-            return
-        }
-        sublayers.forEach { (sublayer) in
-            sublayer.removeFromSuperlayer()
-        }
-    }
-}
-
-class GradientView: UIView {
-    @IBInspectable var startColor: UIColor = .black { didSet { updateColors() } }
-    @IBInspectable var endColor: UIColor = .white { didSet { updateColors() } }
-    @IBInspectable var startLocation: Double = 0.05 { didSet { updateLocations() } }
-    @IBInspectable var endLocation: Double = 0.95 { didSet { updateLocations() } }
-    @IBInspectable var horizontalMode: Bool = false { didSet { updatePoints() } }
-    @IBInspectable var diagonalMode: Bool = false { didSet { updatePoints() } }
-    
-    override class var layerClass: AnyClass { return CAGradientLayer.self }
-    
-    var gradientLayer: CAGradientLayer { return layer as! CAGradientLayer }
-    
-    func updatePoints() {
-        if horizontalMode {
-            gradientLayer.startPoint = diagonalMode ? CGPoint(x: 1, y: 0): CGPoint(x: 0, y: 0.5)
-            gradientLayer.endPoint = diagonalMode ? CGPoint(x: 0, y: 1): CGPoint(x: 1, y: 0.5)
-        } else {
-            gradientLayer.startPoint = diagonalMode ? CGPoint(x: 0, y: 0): CGPoint(x: 0.5, y: 0)
-            gradientLayer.endPoint = diagonalMode ? CGPoint(x: 1, y: 1): CGPoint(x: 0.5, y: 1)
-        }
-    }
-    func updateLocations() {
-        gradientLayer.locations = [startLocation as NSNumber, endLocation as NSNumber]
-    }
-    func updateColors() {
-        gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        updatePoints()
-        updateLocations()
-        updateColors()
-    }
-}
-
-extension UISearchBar {
-    @IBInspectable var textColor: UIColor? {
-        get {
-            if let textField = self.value(forKey: "searchField") as? UITextField  {
-                return textField.textColor
-            } else {
-                return nil
-            }
-        }
-        
-        set (newValue) {
-            if let textField = self.value(forKey: "searchField") as? UITextField  {
-                textField.textColor = newValue
-            }
-        }
-    }
 }
 
 extension UITextView {
@@ -271,67 +136,6 @@ extension UITextView {
 }
 
 extension UIView {
-    @IBInspectable var shadowColor: UIColor? {
-        set {
-            layer.shadowColor = newValue!.cgColor
-        }
-        get {
-            if let color = layer.shadowColor {
-                return UIColor(cgColor:color)
-            }
-            else {
-                return nil
-            }
-        }
-    }
-    
-    @IBInspectable var shadowOpacity: Float {
-        set {
-            layer.shadowOpacity = newValue
-        }
-        get {
-            return layer.shadowOpacity
-        }
-    }
-    
-    @IBInspectable var shadowOffset: CGPoint {
-        set {
-            layer.shadowOffset = CGSize(width: newValue.x, height: newValue.y)
-        }
-        get {
-            return CGPoint(x: layer.shadowOffset.width, y:layer.shadowOffset.height)
-        }
-    }
-    
-    @IBInspectable var shadowRadius: CGFloat {
-        set {
-            layer.shadowRadius = newValue
-        }
-        get {
-            return layer.shadowRadius
-        }
-    }
-    
-    @IBInspectable var borderColor: UIColor {
-        get {
-            return self.borderColor
-        }
-        set {
-            layer.masksToBounds = true
-            layer.borderColor = newValue.cgColor
-        }
-    }
-    
-    @IBInspectable var borderWidth: CGFloat {
-        get {
-            return self.borderWidth
-        }
-        set {
-            layer.masksToBounds = true
-            layer.borderWidth = newValue
-        }
-    }
-    
     @IBInspectable var cornerRadius: CGFloat {
         get {
             return self.cornerRadius
@@ -340,5 +144,28 @@ extension UIView {
             layer.masksToBounds = true
             layer.cornerRadius = newValue
         }
+    }
+}
+
+extension String {
+    var width: CGFloat {
+        let label = UILabel()
+        label.text = self
+        label.sizeToFit()
+        
+        if label.frame.width < 50 { return 50 }
+        return label.frame.width
+    }
+    
+    var height: CGFloat {
+        guard let keyWindow = UIApplication.shared.keyWindow else {
+            return 0
+        }
+        
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: keyWindow.frame.size.width, height: 40))
+        label.numberOfLines = 1000
+        label.text = self
+        label.sizeToFit()
+        return label.frame.height
     }
 }

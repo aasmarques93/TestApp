@@ -9,16 +9,16 @@
 import SwiftyJSON
 
 struct RouletteServiceModel: ServiceModel {
-    func getGenres(handler: @escaping Handler<[Genres]>) {
+    func getGenres(handler: @escaping Handler<[Genre]>) {
         request(requestUrl: .genres, handlerObject: { (object) in
             guard let array = object as? [JSON] else {
                 handler([])
                 return
             }
             
-            var arrayGenres = [Genres]()
+            var arrayGenres = [Genre]()
             array.forEach { (genre) in
-                arrayGenres.append(Genres(object: genre))
+                arrayGenres.append(Genre(object: genre))
             }
             handler(arrayGenres)
         })

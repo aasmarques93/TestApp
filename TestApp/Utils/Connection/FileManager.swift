@@ -12,6 +12,7 @@ import Foundation
 enum FileManager: String {
     case requestLinks = "RequestLinks"
     case environmentLink = "EnvironmentLinks"
+    case test
     
     static func load(file: FileManager, key: String) -> String {
         guard let host = file.contentDictionary?.object(forKey: key) as? String else {
