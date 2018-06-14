@@ -4,6 +4,7 @@ PODS:
     - Differ (~> 1.0)
     - ReactiveKit (~> 3.9)
   - CollectionViewSlantedLayout (3.0.1)
+  - CRRefresh (1.0.7)
   - Differ (1.1.1)
   - FCAlertView (1.4.0)
   - Moya (11.0.2):
@@ -28,6 +29,7 @@ DEPENDENCIES:
   - Alamofire
   - Bond (~> 6.0-beta)
   - CollectionViewSlantedLayout
+  - CRRefresh
   - FCAlertView
   - Moya
   - NVActivityIndicatorView
@@ -42,6 +44,7 @@ SPEC REPOS:
     - Alamofire
     - Bond
     - CollectionViewSlantedLayout
+    - CRRefresh
     - Differ
     - FCAlertView
     - Moya
@@ -58,6 +61,7 @@ SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   Bond: f07e371c05e07c46589c4a518515ea39c6263055
   CollectionViewSlantedLayout: 8c8ebc112e3ac1c3318a916aa9c8d9f1901f0dd9
+  CRRefresh: 0a77b1b0d81a6a9e1ac611cb748ba3660b89601f
   Differ: 462849df6097d4e0e5ebbc9af2475f7aebfd65dc
   FCAlertView: fdddd63381898c1d1a5a20c9f084fbd2c6d12f8b
   Moya: a725035953bc1c0eb1be505ab903984501d82440
@@ -70,6 +74,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
   ViewAnimator: 9d60ae822b6637832bc0a4f7dd8e01489103ee7c
 
-PODFILE CHECKSUM: a8fb985d9fd49e8e0e27ee0377a957d49872c6a4
+PODFILE CHECKSUM: cfb5128290b593f288a26c2f50b592ef2198eaae
 
 COCOAPODS: 1.5.0.beta.1

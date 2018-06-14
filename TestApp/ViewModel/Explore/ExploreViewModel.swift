@@ -29,14 +29,6 @@ class ExploreViewModel: ViewModel, LoadingProtocol {
         loading.start()
         serviceModel.getGenres { [weak self] (object) in
             self?.loading.stop()
-            
-            do {
-                try self?.throwError(with: object)
-            } catch {
-                self?.delegate?.showAlert?(message: error.localizedDescription)
-                return
-            }
-            
             self?.arrayGenres = object.genres ?? []
         }
     }
@@ -45,5 +37,9 @@ class ExploreViewModel: ViewModel, LoadingProtocol {
     
     func exploreCellViewModel(at indexPath: IndexPath) -> ExploreCellViewModel {
         return ExploreCellViewModel(object: arrayGenres[indexPath.row])
+    }
+    
+    func movieShowsViewModel(at indexPath: IndexPath) -> MovieShowsViewModel {
+        return MovieShowsViewModel(selectedTab: .searchByGenre, isMoviesTab: true, genre: arrayGenres[indexPath.row])
     }
 }

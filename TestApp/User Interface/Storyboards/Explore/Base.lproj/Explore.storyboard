@@ -89,6 +89,9 @@
                             <outlet property="delegate" destination="GPf-VE-XG4" id="RLK-pH-px8"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" id="94K-Q8-tXt">
+                        <barButtonItem key="backBarButtonItem" title=" " id="dTN-PH-Va8"/>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p1k-fH-JNL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

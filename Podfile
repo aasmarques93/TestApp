@@ -16,6 +16,7 @@ target 'TestApp' do
   pod 'NVActivityIndicatorView'
   pod 'ViewAnimator'
   pod 'SwiftKeychainWrapper'
+  pod 'CRRefresh'
   
   # Pods for TestApp
 

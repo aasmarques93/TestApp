@@ -16,7 +16,7 @@ private let numberOfColumns: CGFloat = 2
 class ExploreView: UICollectionViewController {
     // MARK: - Properties -
     
-    private let viewModel = ExploreViewModel()
+    let viewModel = ExploreViewModel()
     
     var collectionViewFlowLayout: UICollectionViewFlowLayout {
         let layout = UICollectionViewFlowLayout()
@@ -48,13 +48,11 @@ class ExploreView: UICollectionViewController {
         title = Titles.explore.localized
         collectionView?.collectionViewLayout = collectionViewFlowLayout
     }
-    
-    // MARK: - UICollectionViewDataSource -
-    
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
+}
+
+// MARK: - UICollectionViewDataSource -
+
+extension ExploreView {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.numberOfItems
     }
@@ -67,12 +65,18 @@ class ExploreView: UICollectionViewController {
     }
 }
 
+// MARK: - UICollectionViewDelegate -
+
+extension ExploreView {
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let viewController = instantiate(viewController: MovieShowsView.self, from: .movieShow)
+        viewController.viewModel = viewModel.movieShowsViewModel(at: indexPath)
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+}
+
 extension ExploreView: ViewModelDelegate {
     func reloadData() {
         collectionView?.reloadData()
-    }
-    
-    func showAlert(message: String?) {
-        alertController?.show(message: message)
     }
 }

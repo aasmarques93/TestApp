@@ -9,8 +9,8 @@
 import UIKit
 
 class ExploreViewCell: UICollectionViewCell {
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var labelTitle: UILabel!
+    @IBOutlet var imageView: UIImageView!
+    @IBOutlet var labelTitle: UILabel!
     
     var viewModel: ExploreCellViewModel?
     
@@ -18,5 +18,10 @@ class ExploreViewCell: UICollectionViewCell {
         viewModel?.image.bind(to: imageView.reactive.image)
         viewModel?.title.bind(to: labelTitle.reactive.text)
         viewModel?.loadData()
+    }
+    
+    deinit {
+        imageView = nil
+        labelTitle = nil
     }
 }

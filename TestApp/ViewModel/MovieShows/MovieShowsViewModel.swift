@@ -33,38 +33,47 @@ class MovieShowsViewModel: ViewModel, LoadingProtocol {
     
     // MARK: Variables
     private var isMoviesTab: Bool
-    private var isDataLoading = false
-    
     private var selectedTab: MovieShowTab
+    private var genre: Genre?
+    var genreTitle: String? { return genre?.name }
     
     private var parameters: [String: Any] {
         return [
             "page": currentPage,
-            "language": Locale.preferredLanguages.first ?? ""
+            "language": Locale.preferredLanguages.first ?? "",
+            "id": genre?.id ?? 0
         ]
     }
+    private var isDataLoading = false
     
     // MARK: - Life cycle -
     
-    init(selectedTab: MovieShowTab, isMoviesTab: Bool) {
+    init(selectedTab: MovieShowTab, isMoviesTab: Bool, genre: Genre? = nil) {
         self.selectedTab = selectedTab
         self.isMoviesTab = isMoviesTab
+        self.genre = genre
     }
     
     // MARK: - Service Requests -
     
-    func loadData(forceRefresh: Bool = false) {
-        guard forceRefresh || arrayCache.isEmpty else {
+    func loadData(forceRefresh: Bool = false, isPagination: Bool = false) {
+        guard forceRefresh || arrayCache.isEmpty || selectedTab.requestUrl == .searchByGenre else {
             arrayMovieShows = arrayCache
-            reloadData()
+            delegate?.reloadData?()
             return
+        }
+
+        if forceRefresh && !isPagination {
+            arrayMovieShows = []
+            currentPage = 1
+        } else if arrayMovieShows.isEmpty {
+            loading.start()
         }
         
         isDataLoading = true
-        loading.start()
         serviceModel.getMovieShows(requestUrl: selectedTab.requestUrl, urlParameters: parameters) { [weak self] (object) in
             self?.loading.stop()
-            
+
             do {
                 try self?.throwError(with: object)
             } catch {
@@ -73,26 +82,23 @@ class MovieShowsViewModel: ViewModel, LoadingProtocol {
             }
             
             self?.arrayMovieShows.append(contentsOf: object.results ?? [])
+            self?.saveMovieShows()
             self?.currentPage += 1
-            self?.reloadData()
-            
-            LocalStorageHelper.save(object: self?.arrayMovieShows.map { $0.dictionaryRepresentation() },
-                                    requestUrl: self?.selectedTab.requestUrl)
+            self?.isDataLoading = false
+            self?.delegate?.reloadData?()
         }
-    }
-    
-    // MARK: - View Model methods -
-    
-    func reloadData() {
-        delegate?.reloadData?()
-        isDataLoading = false
     }
     
     func loadDataPaginationIfNeeded(at indexPath: IndexPath) {
-        guard indexPath.row == arrayMovieShows.count-2 && !isDataLoading else {
+        guard indexPath.item == arrayMovieShows.count-2 && !isDataLoading else {
             return
         }
-        loadData(forceRefresh: true)
+        loadData(forceRefresh: true, isPagination: true)
+    }
+    
+    private func saveMovieShows() {
+        _ = LocalStorageHelper.save(object: arrayMovieShows.map { $0.dictionaryRepresentation() },
+                                    requestUrl: selectedTab.requestUrl)
     }
     
     // MARK: - View Model instantiation -

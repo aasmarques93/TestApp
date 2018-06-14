@@ -34,7 +34,7 @@ struct JSONWrapper {
             return object
         } catch {
             print(error.localizedDescription)
+            return nil
         }
-        return nil
     }
 }

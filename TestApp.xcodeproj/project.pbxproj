@@ -45,6 +45,10 @@
 		ED3D811020D18D7A00ABC22F /* ExploreCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3D810F20D18D7A00ABC22F /* ExploreCellViewModel.swift */; };
 		ED3D811220D18D8A00ABC22F /* ExploreServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3D811120D18D8A00ABC22F /* ExploreServiceModel.swift */; };
 		ED3D811820D1A69900ABC22F /* LocalStorageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3D811720D1A69900ABC22F /* LocalStorageHelper.swift */; };
+		ED3D811A20D1F95F00ABC22F /* LocalStorageHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3D811920D1F95F00ABC22F /* LocalStorageHelperTests.swift */; };
+		ED3D811D20D1FFC300ABC22F /* ExploreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3D811C20D1FFC300ABC22F /* ExploreTests.swift */; };
+		ED3D811F20D2038800ABC22F /* searchByGenre.json in Resources */ = {isa = PBXBuildFile; fileRef = ED3D811E20D2038800ABC22F /* searchByGenre.json */; };
+		ED3D812120D20EBF00ABC22F /* ExploreCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3D812020D20EBF00ABC22F /* ExploreCellTests.swift */; };
 		ED822BDE20CAB5DB00E530F7 /* EnvironmentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED822BBE20CAB5D900E530F7 /* EnvironmentManager.swift */; };
 		ED822BDF20CAB5DB00E530F7 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED822BBF20CAB5D900E530F7 /* FileManager.swift */; };
 		ED822BE020CAB5DB00E530F7 /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED822BC120CAB5D900E530F7 /* General.swift */; };
@@ -162,6 +166,10 @@
 		ED3D810F20D18D7A00ABC22F /* ExploreCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCellViewModel.swift; sourceTree = "<group>"; };
 		ED3D811120D18D8A00ABC22F /* ExploreServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreServiceModel.swift; sourceTree = "<group>"; };
 		ED3D811720D1A69900ABC22F /* LocalStorageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStorageHelper.swift; sourceTree = "<group>"; };
+		ED3D811920D1F95F00ABC22F /* LocalStorageHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageHelperTests.swift; sourceTree = "<group>"; };
+		ED3D811C20D1FFC300ABC22F /* ExploreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreTests.swift; sourceTree = "<group>"; };
+		ED3D811E20D2038800ABC22F /* searchByGenre.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = searchByGenre.json; sourceTree = "<group>"; };
+		ED3D812020D20EBF00ABC22F /* ExploreCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCellTests.swift; sourceTree = "<group>"; };
 		ED822BBE20CAB5D900E530F7 /* EnvironmentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentManager.swift; sourceTree = "<group>"; };
 		ED822BBF20CAB5D900E530F7 /* FileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		ED822BC120CAB5D900E530F7 /* General.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = General.swift; sourceTree = "<group>"; };
@@ -407,6 +415,7 @@
 				ED9C6D4020D0C6AE00A3FA78 /* JSONWrapperTests.swift */,
 				ED9C6D4320D126DA00A3FA78 /* CircularProgressViewTests.swift */,
 				ED9C6D4520D12B8E00A3FA78 /* FileManagerTests.swift */,
+				ED3D811920D1F95F00ABC22F /* LocalStorageHelperTests.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -434,6 +443,15 @@
 				ED3D811720D1A69900ABC22F /* LocalStorageHelper.swift */,
 			);
 			path = LocalStorageHelper;
+			sourceTree = "<group>";
+		};
+		ED3D811B20D1FFAB00ABC22F /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				ED3D811C20D1FFC300ABC22F /* ExploreTests.swift */,
+				ED3D812020D20EBF00ABC22F /* ExploreCellTests.swift */,
+			);
+			path = Explore;
 			sourceTree = "<group>";
 		};
 		ED822BAF20CAB4DD00E530F7 /* User Interface */ = {
@@ -554,6 +572,7 @@
 				ED32929420CFDBAD00D75DF2 /* tvRecommendations.json */,
 				EDCEF86120D0724A009CDE06 /* genre.json */,
 				ED89784F20CF66E900F3962B /* genres.json */,
+				ED3D811E20D2038800ABC22F /* searchByGenre.json */,
 			);
 			path = Json;
 			sourceTree = "<group>";
@@ -777,6 +796,7 @@
 				EDCEF86320D0747F009CDE06 /* ServiceModel */,
 				ED32929A20CFE84700D75DF2 /* Utils */,
 				ED89785420CF686400F3962B /* MovieShows */,
+				ED3D811B20D1FFAB00ABC22F /* Explore */,
 				EDF53ECD20CAB21300542DBF /* Info.plist */,
 			);
 			path = TestAppTests;
@@ -928,6 +948,7 @@
 				EDF53EBC20CAB21200542DBF /* Main.storyboard in Resources */,
 				ED02B33520CBF037008593EC /* Explore.storyboard in Resources */,
 				ED89785220CF66EB00F3962B /* genres.json in Resources */,
+				ED3D811F20D2038800ABC22F /* searchByGenre.json in Resources */,
 				ED02B33A20CBF049008593EC /* MovieShowXibView.xib in Resources */,
 				ED02B33320CBF037008593EC /* MovieShow.storyboard in Resources */,
 			);
@@ -977,6 +998,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-TestApp/Pods-TestApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bond/Bond.framework",
+				"${BUILT_PRODUCTS_DIR}/CRRefresh/CRRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/CollectionViewSlantedLayout/CollectionViewSlantedLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/Differ/Differ.framework",
 				"${BUILT_PRODUCTS_DIR}/FCAlertView/FCAlertView.framework",
@@ -994,6 +1016,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bond.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CRRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CollectionViewSlantedLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differ.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FCAlertView.framework",
@@ -1111,6 +1134,7 @@
 				EDCEF86D20D0A06D009CDE06 /* AppearanceTests.swift in Sources */,
 				ED9C6D4120D0C6AE00A3FA78 /* JSONWrapperTests.swift in Sources */,
 				ED9C6D4620D12B8E00A3FA78 /* FileManagerTests.swift in Sources */,
+				ED3D811A20D1F95F00ABC22F /* LocalStorageHelperTests.swift in Sources */,
 				ED9C6D4420D126DA00A3FA78 /* CircularProgressViewTests.swift in Sources */,
 				EDCEF86920D07EC7009CDE06 /* ColorStyleTests.swift in Sources */,
 				EDCEF86520D074A1009CDE06 /* ServiceModelTests.swift in Sources */,
@@ -1124,7 +1148,9 @@
 				ED89785620CF68B700F3962B /* MovieShowsContainerTests.swift in Sources */,
 				ED9C6D4920D1346B00A3FA78 /* ViewModelTests.swift in Sources */,
 				ED32929120CF73F700D75DF2 /* MovieShowsTests.swift in Sources */,
+				ED3D811D20D1FFC300ABC22F /* ExploreTests.swift in Sources */,
 				ED3292AA20D04F5000D75DF2 /* ModelTests.swift in Sources */,
+				ED3D812120D20EBF00ABC22F /* ExploreCellTests.swift in Sources */,
 				ED9C6D4B20D1400700A3FA78 /* MovieShowViewCellTests.swift in Sources */,
 				ED9C6D3F20D0B81600A3FA78 /* ExtensionsTests.swift in Sources */,
 			);

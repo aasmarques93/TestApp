@@ -17,10 +17,4 @@ struct ExploreServiceModel: ServiceModel {
             handler(GenresList(object: object))
         })
     }
-    
-    func getMovieShowsFromGenre(urlParameters: [String: Any], handler: @escaping Handler<MovieShowsList>) {
-        request(requestUrl: .searchByGenre, urlParameters: urlParameters, handlerObject: { (object) in
-            handler(MovieShowsList(object: object))
-        })
-    }
 }

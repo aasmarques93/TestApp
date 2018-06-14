@@ -11,9 +11,9 @@ import UIKit
 enum MovieShowTab: String {
     // Movies
     case popular
-    case nowPlaying
     case topRated
     case upcoming
+    case nowPlaying
     
     // TV Shows
     case airingToday
@@ -21,7 +21,10 @@ enum MovieShowTab: String {
     case popularShow
     case topRatedShow
     
-    static var movies: [MovieShowTab] = [.popular, .nowPlaying, .topRated, .upcoming]
+    // Genre
+    case searchByGenre
+    
+    static var movies: [MovieShowTab] = [.popular, .topRated, .upcoming, .nowPlaying]
     static var shows: [MovieShowTab] = [.airingToday, .onTheAir, .popularShow, .topRatedShow]
 }
 
@@ -34,12 +37,12 @@ extension MovieShowTab {
         switch self {
         case .popular:
             return .popular
-        case .nowPlaying:
-            return .nowPlaying
         case .topRated:
             return .topRated
         case .upcoming:
             return .upcoming
+        case .nowPlaying:
+            return .nowPlaying
         case .airingToday:
             return .tvAiringToday
         case .onTheAir:
@@ -48,6 +51,8 @@ extension MovieShowTab {
             return .tvPopular
         case .topRatedShow:
             return .tvTopRated
+        case .searchByGenre:
+            return .searchByGenre
         }
     }
 }

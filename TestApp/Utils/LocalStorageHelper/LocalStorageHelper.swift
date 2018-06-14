@@ -9,11 +9,11 @@
 import SwiftKeychainWrapper
 
 struct LocalStorageHelper {
-    static func save(object: Any?, requestUrl: RequestUrl?) {
+    static func save(object: Any?, requestUrl: RequestUrl?) -> Bool {
         guard let object = object, let requestUrl = requestUrl else {
-            return
+            return false
         }
-        _ = KeychainWrapper.standard.set(NSKeyedArchiver.archivedData(withRootObject: object), forKey: requestUrl.rawValue)
+        return KeychainWrapper.standard.set(NSKeyedArchiver.archivedData(withRootObject: object), forKey: requestUrl.rawValue)
     }
     
     static func fetch(requestUrl: RequestUrl) -> Any? {
@@ -23,7 +23,7 @@ struct LocalStorageHelper {
         return NSKeyedUnarchiver.unarchiveObject(with: data)
     }
     
-    static func delete(requestUrl: RequestUrl) {
-        _ = KeychainWrapper.standard.removeObject(forKey: requestUrl.rawValue)
+    static func delete(requestUrl: RequestUrl) -> Bool {
+        return KeychainWrapper.standard.removeObject(forKey: requestUrl.rawValue)
     }
 }

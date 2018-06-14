@@ -48,7 +48,7 @@ class MovieShowsTests: TestCase {
         super.setUp()
         EnvironmentManager.shared.current = .mock
         viewModel = MovieShowsViewModel(selectedTab: .popular, isMoviesTab: true)
-        viewModel.loadData()
+        viewModel.loadData(forceRefresh: true)
         
         movieShowsView = instantiate(viewController: MovieShowsView.self, from: .movieShow)
         movieShowsView.viewModel = viewModel
@@ -91,7 +91,7 @@ class MovieShowsTests: TestCase {
     func testLoadData() {
         viewModel.delegate = delegate
         delegate.reloadDataExpectation = createTestExpectation()
-        viewModel.loadData()
+        viewModel.loadData(forceRefresh: true)
         callWaitForExpectations {
             XCTAssertFalse(self.viewModel.numberOfItems == 0)
         }
@@ -101,7 +101,7 @@ class MovieShowsTests: TestCase {
         let viewModelFailure = MovieShowsViewModel(selectedTab: .nowPlaying, isMoviesTab: true)
         viewModelFailure.delegate = delegate
         delegate.showAlertExpectation = createTestExpectation(message: "Should perform showAlert")
-        viewModelFailure.loadData()
+        viewModelFailure.loadData(forceRefresh: true)
         callWaitForExpectations {
             XCTAssertTrue(viewModelFailure.numberOfItems == 0)
         }

@@ -8,6 +8,7 @@
 
 import UIKit
 import CollectionViewSlantedLayout
+import CRRefresh
 
 private let offsetSpeed: CGFloat = 150
 private let cellHeight: CGFloat = 275
@@ -16,32 +17,46 @@ class MovieShowsView: UICollectionViewController {
     // MARK: - View Model -
     
     var viewModel: MovieShowsViewModel?
-    private var selectedIndexPath: IndexPath?
     
     // MARK: - Life cycle -
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupRefresh()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setupAppearance()
         setupViewModel()
     }
     
     // MARK: - Setup -
     
+    private func setupAppearance() {
+        title = viewModel?.genreTitle
+    }
+    
+    private func setupRefresh() {
+        let animator = FastAnimator(frame: .zero,
+                                    color: UIColor(colorStyle: .primary),
+                                    arrowColor: UIColor(colorStyle: .secondary),
+                                    lineWidth: 2.0)
+        
+        collectionView?.cr.addHeadRefresh(animator: animator, handler: { [weak self] in
+            self?.viewModel?.loadData(forceRefresh: true)
+        })
+    }
+    
     private func setupViewModel() {
         viewModel?.delegate = self
         viewModel?.loadData()
-    }
-    
-    // MARK: - Segues -
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let viewController = segue.destination as? MovieShowDetailView
-        viewController?.viewModel = viewModel?.movieShowDetailViewModel(at: selectedIndexPath)
     }
 }
 
 extension MovieShowsView: ViewModelDelegate {
     func reloadData() {
+        collectionView?.cr.endHeaderRefresh()
         collectionView?.reloadData()
         collectionView?.collectionViewLayout.invalidateLayout()
     }
@@ -54,10 +69,6 @@ extension MovieShowsView: ViewModelDelegate {
 // MARK: - UICollectionViewDataSource -
 
 extension MovieShowsView {
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel?.numberOfItems ?? 0
     }
@@ -74,10 +85,10 @@ extension MovieShowsView {
 
 extension MovieShowsView {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedIndexPath = indexPath
-        performSegue(withIdentifier: MovieShowDetailView.identifier, sender: self)
+        let viewController = instantiate(viewController: MovieShowDetailView.self, from: .movieShowDetail)
+        viewController.viewModel = viewModel?.movieShowDetailViewModel(at: indexPath)
+        navigationController?.pushViewController(viewController, animated: true)
     }
-
     override func collectionView(_ collectionView: UICollectionView,
                                  willDisplay cell: UICollectionViewCell,
                                  forItemAt indexPath: IndexPath) {
