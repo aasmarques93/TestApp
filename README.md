@@ -1,4 +1,4 @@
-## TestApp
+# TestApp
 
 * Brief description
   - The purpose of this app is to share movies and TV shows information to make you aware of what's is happening in the theater's world.
@@ -15,7 +15,7 @@
 
 These instructions will get you a copy of the project setup and run on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-# Prerequisites
+## Prerequisites
 
 * Have cocoapods installed on your machine
 * Run and install cocoapods via terminal: 
