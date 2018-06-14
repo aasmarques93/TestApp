@@ -69,7 +69,7 @@ extension ExploreView {
 
 extension ExploreView {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let viewController = instantiate(viewController: MovieShowsView.self, from: .movieShow)
+        let viewController = instantiate(viewController: MovieShowsView.self, from: .movieShows)
         viewController.viewModel = viewModel.movieShowsViewModel(at: indexPath)
         navigationController?.pushViewController(viewController, animated: true)
     }

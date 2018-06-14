@@ -38,7 +38,7 @@ class PageViewController: UIPageViewController {
     }
     
     func createViewController(index: Int) -> UIViewController {
-        let viewController = instantiate(viewController: MovieShowsView.self, from: .movieShow)
+        let viewController = instantiate(viewController: MovieShowsView.self, from: .movieShows)
         viewController.pageIndex = index
         viewController.viewModel = viewModel?.movieShowsViewModel(at: index)
         return viewController

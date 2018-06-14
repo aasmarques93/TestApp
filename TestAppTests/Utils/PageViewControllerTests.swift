@@ -32,7 +32,7 @@ class PageViewControllerTests: TestCase {
     
     override func setUp() {
         super.setUp()
-        pageViewController = instantiate(viewController: PageViewController.self, from: .movieShow)
+        pageViewController = instantiate(viewController: PageViewController.self, from: .movieShows)
         pageViewController.viewModel = MovieShowsContainerViewModel(isMoviesTab: true)
     }
     

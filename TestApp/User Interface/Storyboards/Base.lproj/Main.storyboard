@@ -108,10 +108,10 @@
             </objects>
             <point key="canvasLocation" x="126" y="1820"/>
         </scene>
-        <!--MovieShow-->
+        <!--MovieShows-->
         <scene sceneID="YLg-qa-pUJ">
             <objects>
-                <viewControllerPlaceholder storyboardName="MovieShow" id="4Fw-yA-s2H" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="MovieShows" id="4Fw-yA-s2H" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="2Tv-U9-H5a"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X8f-tl-qBr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -162,10 +162,10 @@
             </objects>
             <point key="canvasLocation" x="126" y="337"/>
         </scene>
-        <!--MovieShow-->
+        <!--MovieShows-->
         <scene sceneID="ssu-fu-s8V">
             <objects>
-                <viewControllerPlaceholder storyboardName="MovieShow" id="swP-2G-mwS" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="MovieShows" id="swP-2G-mwS" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="gBL-ih-JST"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CuV-lZ-5Nj" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -24,7 +24,7 @@ class MovieShowsContainerTests: TestCase {
         super.setUp()
         viewModelMovies = MovieShowsContainerViewModel(isMoviesTab: true)
         viewModelShows = MovieShowsContainerViewModel(isMoviesTab: false)
-        movieShowsContainerView = instantiate(viewController: MovieShowsContainerView.self, from: .movieShow)
+        movieShowsContainerView = instantiate(viewController: MovieShowsContainerView.self, from: .movieShows)
         movieShowsContainerView?.viewModel = viewModelMovies
         movieShowsContainerView?.setupPagerView()
         movieShowsContainerView?.setupPageViewController()

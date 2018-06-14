@@ -50,7 +50,7 @@ class MovieShowsTests: TestCase {
         viewModel = MovieShowsViewModel(selectedTab: .popular, isMoviesTab: true)
         viewModel.loadData(forceRefresh: true)
         
-        movieShowsView = instantiate(viewController: MovieShowsView.self, from: .movieShow)
+        movieShowsView = instantiate(viewController: MovieShowsView.self, from: .movieShows)
         movieShowsView.viewModel = viewModel
     }
     
