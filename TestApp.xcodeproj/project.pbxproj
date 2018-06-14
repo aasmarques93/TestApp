@@ -24,7 +24,6 @@
 		ED02B3D020CBF2C2008593EC /* MovieShowDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02B3B520CBF2C2008593EC /* MovieShowDetail.swift */; };
 		ED02B3DE20CBFBE2008593EC /* MovieShowsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02B3DD20CBFBE2008593EC /* MovieShowsViewModel.swift */; };
 		ED02B3E320CC05E2008593EC /* MovieShowsServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02B3E220CC05E2008593EC /* MovieShowsServiceModel.swift */; };
-		ED02B3E920CC07AF008593EC /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = ED02B3E520CC07AF008593EC /* iCarousel.m */; };
 		ED02B3EA20CC07AF008593EC /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02B3E820CC07AF008593EC /* CircularProgressView.swift */; };
 		ED02B3FB20CC5057008593EC /* MovieShowsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02B3FA20CC5057008593EC /* MovieShowsView.swift */; };
 		ED02B3FD20CC52E4008593EC /* MovieShowsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02B3FC20CC52E4008593EC /* MovieShowsList.swift */; };
@@ -143,10 +142,7 @@
 		ED02B3B520CBF2C2008593EC /* MovieShowDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieShowDetail.swift; sourceTree = "<group>"; };
 		ED02B3DD20CBFBE2008593EC /* MovieShowsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieShowsViewModel.swift; sourceTree = "<group>"; };
 		ED02B3E220CC05E2008593EC /* MovieShowsServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieShowsServiceModel.swift; sourceTree = "<group>"; };
-		ED02B3E520CC07AF008593EC /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
-		ED02B3E620CC07AF008593EC /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
 		ED02B3E820CC07AF008593EC /* CircularProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
-		ED02B3F820CC44DF008593EC /* TestApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		ED02B3FA20CC5057008593EC /* MovieShowsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieShowsView.swift; sourceTree = "<group>"; };
 		ED02B3FC20CC52E4008593EC /* MovieShowsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieShowsList.swift; sourceTree = "<group>"; };
 		ED32929020CF73F700D75DF2 /* MovieShowsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieShowsTests.swift; sourceTree = "<group>"; };
@@ -384,15 +380,6 @@
 			path = Explore;
 			sourceTree = "<group>";
 		};
-		ED02B3E420CC07AF008593EC /* iCarousel */ = {
-			isa = PBXGroup;
-			children = (
-				ED02B3E520CC07AF008593EC /* iCarousel.m */,
-				ED02B3E620CC07AF008593EC /* iCarousel.h */,
-			);
-			path = iCarousel;
-			sourceTree = "<group>";
-		};
 		ED02B3E720CC07AF008593EC /* CircularProgressView */ = {
 			isa = PBXGroup;
 			children = (
@@ -515,7 +502,6 @@
 				ED822BC620CAB5DA00E530F7 /* Extensions */,
 				ED822BC020CAB5D900E530F7 /* General */,
 				ED822BC220CAB5DA00E530F7 /* JSONWrapper */,
-				ED02B3F820CC44DF008593EC /* TestApp-Bridging-Header.h */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -816,7 +802,6 @@
 			children = (
 				ED822C1620CB512300E530F7 /* RAMTabBar */,
 				ED02B3E720CC07AF008593EC /* CircularProgressView */,
-				ED02B3E420CC07AF008593EC /* iCarousel */,
 			);
 			path = "Third Party";
 			sourceTree = "<group>";
@@ -1011,6 +996,7 @@
 				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/ViewAnimator/ViewAnimator.framework",
+				"${BUILT_PRODUCTS_DIR}/iCarousel/iCarousel.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -1029,6 +1015,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ViewAnimator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iCarousel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1103,7 +1090,6 @@
 				ED3D811020D18D7A00ABC22F /* ExploreCellViewModel.swift in Sources */,
 				ED02B35420CBF070008593EC /* MovieShowDetailViewModel.swift in Sources */,
 				ED02B3FD20CC52E4008593EC /* MovieShowsList.swift in Sources */,
-				ED02B3E920CC07AF008593EC /* iCarousel.m in Sources */,
 				ED02B3D020CBF2C2008593EC /* MovieShowDetail.swift in Sources */,
 				ED822C1820CB512300E530F7 /* RAMTabBarUtils.swift in Sources */,
 				EDE9C8CC20CD38E1009D1C64 /* PagerViewCell.swift in Sources */,
@@ -1353,7 +1339,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.aasmarques.TestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "TestApp/Utils/TestApp-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1373,7 +1359,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.aasmarques.TestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "TestApp/Utils/TestApp-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

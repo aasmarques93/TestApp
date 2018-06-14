@@ -7,6 +7,7 @@ PODS:
   - CRRefresh (1.0.7)
   - Differ (1.1.1)
   - FCAlertView (1.4.0)
+  - iCarousel (1.8.3)
   - Moya (11.0.2):
     - Moya/Core (= 11.0.2)
   - Moya/Core (11.0.2):
@@ -31,6 +32,7 @@ DEPENDENCIES:
   - CollectionViewSlantedLayout
   - CRRefresh
   - FCAlertView
+  - iCarousel
   - Moya
   - NVActivityIndicatorView
   - RAMAnimatedTabBarController
@@ -47,6 +49,7 @@ SPEC REPOS:
     - CRRefresh
     - Differ
     - FCAlertView
+    - iCarousel
     - Moya
     - NVActivityIndicatorView
     - RAMAnimatedTabBarController
@@ -64,6 +67,7 @@ SPEC CHECKSUMS:
   CRRefresh: 0a77b1b0d81a6a9e1ac611cb748ba3660b89601f
   Differ: 462849df6097d4e0e5ebbc9af2475f7aebfd65dc
   FCAlertView: fdddd63381898c1d1a5a20c9f084fbd2c6d12f8b
+  iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
   Moya: a725035953bc1c0eb1be505ab903984501d82440
   NVActivityIndicatorView: 75c9634073e03b31d7e2748cd2417feab1206195
   RAMAnimatedTabBarController: 3c40472db54eda74d465583f8c7f571b206c54d6
@@ -74,6 +78,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
   ViewAnimator: 9d60ae822b6637832bc0a4f7dd8e01489103ee7c
 
-PODFILE CHECKSUM: cfb5128290b593f288a26c2f50b592ef2198eaae
+PODFILE CHECKSUM: dafd9e14a18851a5465536984336ce64efbce5da
 
 COCOAPODS: 1.5.0.beta.1

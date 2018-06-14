@@ -9,6 +9,7 @@
 import UIKit
 import Bond
 import ViewAnimator
+import iCarousel
 
 private let animations = [AnimationType.from(direction: .right, offset: 30.0)]
 private let rotateAnimation = AnimationType.rotate(angle: 360)

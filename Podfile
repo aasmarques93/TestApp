@@ -17,6 +17,7 @@ target 'TestApp' do
   pod 'ViewAnimator'
   pod 'SwiftKeychainWrapper'
   pod 'CRRefresh'
+  pod 'iCarousel'
   
   # Pods for TestApp
 
