@@ -49,4 +49,4 @@ iCarousel is the component view that makes the carousel animations.
 
 ## Author
 
-* Arthur Augusto Sousa Marques *
+* Arthur Augusto Sousa Marques*
