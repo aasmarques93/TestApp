@@ -9,11 +9,13 @@
 import UIKit
 import SDWebImage
 import CollectionViewSlantedLayout
+import NVActivityIndicatorView
 
 class MovieShowViewCell: CollectionViewSlantedCell {
     
     // MARK: - Outlets -
     
+    @IBOutlet var activityIndicator: NVActivityIndicatorView!
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var labelTitle: UILabel!
     @IBOutlet var labelAverage: UILabel!
@@ -44,7 +46,14 @@ class MovieShowViewCell: CollectionViewSlantedCell {
     }
     
     private func setupContent() {
-        imageView.sd_setImage(with: viewModel?.imagePathUrl, placeholderImage: UIImage())
+        activityIndicator.startAnimating()
+        activityIndicator.isHidden = false
+        imageView.sd_setImage(with: viewModel?.imagePathUrl,
+                              placeholderImage: UIImage(),
+                              options: []) { [weak self] (image, error, type, url) in
+                                
+                                self?.activityIndicator.isHidden = true
+        }
         ViewAnimatorHelper.animate(views: [labelTitle, labelAverage], direction: .top)
     }
     
@@ -66,6 +75,7 @@ class MovieShowViewCell: CollectionViewSlantedCell {
     // MARK: - Life cycle -
     
     deinit {
+        activityIndicator = nil
         imageView = nil
         labelTitle = nil
         labelAverage = nil

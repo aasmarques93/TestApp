@@ -60,8 +60,6 @@ extension MovieShowsView: ViewModelDelegate {
         collectionView?.cr.endHeaderRefresh()
         collectionView?.reloadData()
         collectionView?.collectionViewLayout.invalidateLayout()
-        
-        ViewAnimatorHelper.animate(views: [collectionView])
     }
     
     func showAlert(message: String?) {

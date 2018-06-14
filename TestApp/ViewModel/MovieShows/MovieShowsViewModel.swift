@@ -101,6 +101,9 @@ class MovieShowsViewModel: ViewModel, LoadingProtocol {
     }
     
     private func saveMovieShows() {
+        guard currentPage == 1 else {
+            return
+        }
         _ = LocalStorageHelper.save(object: arrayMovieShows.map { $0.dictionaryRepresentation() },
                                     requestUrl: selectedTab.requestUrl)
     }

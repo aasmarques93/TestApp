@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -159,6 +160,20 @@
                                                 <constraint firstAttribute="height" constant="100" id="nua-pk-uBd"/>
                                             </constraints>
                                         </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="56T-DR-cUZ" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
+                                            <rect key="frame" x="167" y="156" width="40" height="40"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="AtL-GM-vJs"/>
+                                                <constraint firstAttribute="width" secondItem="56T-DR-cUZ" secondAttribute="height" multiplier="1:1" id="TzU-md-CFM"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="ballTrianglePath"/>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                    <color key="value" red="0.0039215686269999999" green="0.82352941180000006" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
                                     </subviews>
                                 </view>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -166,15 +181,18 @@
                                     <constraint firstItem="krk-xf-9R8" firstAttribute="bottom" secondItem="Mza-lC-8X6" secondAttribute="bottom" id="7az-63-tjB"/>
                                     <constraint firstItem="Mza-lC-8X6" firstAttribute="centerX" secondItem="De3-mI-F98" secondAttribute="centerX" id="970-Vt-fV7"/>
                                     <constraint firstAttribute="trailing" secondItem="5CM-JD-EIk" secondAttribute="trailing" id="AEz-wf-utt"/>
+                                    <constraint firstItem="56T-DR-cUZ" firstAttribute="top" secondItem="Mza-lC-8X6" secondAttribute="bottom" constant="16" id="Bvf-ff-tPT"/>
                                     <constraint firstItem="krk-xf-9R8" firstAttribute="leading" secondItem="De3-mI-F98" secondAttribute="leading" id="MF0-W6-vmP"/>
                                     <constraint firstAttribute="bottom" secondItem="5CM-JD-EIk" secondAttribute="bottom" id="Rig-Vz-qh2"/>
                                     <constraint firstAttribute="trailing" secondItem="krk-xf-9R8" secondAttribute="trailing" id="SPr-A5-VN0"/>
+                                    <constraint firstItem="56T-DR-cUZ" firstAttribute="centerX" secondItem="De3-mI-F98" secondAttribute="centerX" id="UYY-4i-FqY"/>
                                     <constraint firstItem="5CM-JD-EIk" firstAttribute="leading" secondItem="De3-mI-F98" secondAttribute="leading" id="r1w-Rd-c6d"/>
                                     <constraint firstItem="5CM-JD-EIk" firstAttribute="top" secondItem="De3-mI-F98" secondAttribute="top" id="tfn-EC-Few"/>
                                     <constraint firstItem="Mza-lC-8X6" firstAttribute="top" secondItem="De3-mI-F98" secondAttribute="top" id="vDK-TX-XMB"/>
                                 </constraints>
                                 <size key="customSize" width="375" height="275"/>
                                 <connections>
+                                    <outlet property="activityIndicator" destination="56T-DR-cUZ" id="csA-xN-92I"/>
                                     <outlet property="backgroundView" destination="5CM-JD-EIk" id="M5C-02-ZTn"/>
                                     <outlet property="imageView" destination="u90-fD-2qA" id="rW3-oF-HlO"/>
                                     <outlet property="labelAverage" destination="B6u-7F-yKB" id="egp-YM-Wrj"/>

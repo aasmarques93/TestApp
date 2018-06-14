@@ -9,6 +9,7 @@
 import XCTest
 
 @testable import TestApp
+@testable import NVActivityIndicatorView
 
 class MovieShowViewCellTests: TestCase {
     // MARK: - Properties -
@@ -28,6 +29,7 @@ class MovieShowViewCellTests: TestCase {
         imageView = UIImageView(frame: movieShowViewCell.frame)
         imageView.image = #imageLiteral(resourceName: "logo")
         movieShowViewCell.imageView = imageView
+        movieShowViewCell.activityIndicator = NVActivityIndicatorView(frame: .zero)
         movieShowViewCell.labelTitle = UILabel()
         movieShowViewCell.labelAverage = UILabel()
         movieShowViewCell.viewModel = viewModel

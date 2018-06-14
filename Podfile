@@ -15,7 +15,6 @@ target 'TestApp' do
   pod 'CollectionViewSlantedLayout'
   pod 'NVActivityIndicatorView'
   pod 'ViewAnimator'
-  pod 'SwiftKeychainWrapper'
   pod 'CRRefresh'
   pod 'iCarousel'
   

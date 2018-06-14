@@ -38,7 +38,7 @@ class ExploreView: UICollectionViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        ViewAnimatorHelper.animate(views: collectionView?.visibleCells(in: 0))
+        ViewAnimatorHelper.animate(views: collectionView?.visibleCells(in: 0), direction: .bottom)
     }
     
     // MARK: - Setup -
