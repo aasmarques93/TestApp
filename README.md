@@ -1,12 +1,12 @@
 ## TestApp
 
-#Brief Description
+* Brief Description
 The purpose of this app is to share movies and TV shows information to make you aware of what's is happening at the theaters world.
 
-#API
+* API
 TheMovieDB api is the provider of TestApp content data, https://developers.themoviedb.org. 
 
-#Code
+* Code
 The app was made with Swift 4 and followed the Apple guide lines best practices. 
 It was used MVVM as design/architectural pattern, which makes the app clean and improved testability, better separation of concerns and transparent communication.
 All classes implemented, except third party content, passed through Test Cases and UI Test Cases.
