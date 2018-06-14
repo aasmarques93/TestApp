@@ -9,6 +9,7 @@
 import Foundation
 
 class MovieShowsViewModel: ViewModel, LoadingProtocol {
+    
     // MARK: - Properties -
     
     internal var loading: Loading = Loading()
@@ -73,20 +74,23 @@ class MovieShowsViewModel: ViewModel, LoadingProtocol {
         isDataLoading = true
         serviceModel.getMovieShows(requestUrl: selectedTab.requestUrl, urlParameters: parameters) { [weak self] (object) in
             self?.loading.stop()
-
-            do {
-                try self?.throwError(with: object)
-            } catch {
-                self?.delegate?.showAlert?(message: error.localizedDescription)
-                return
-            }
-            
-            self?.arrayMovieShows.append(contentsOf: object.results ?? [])
-            self?.saveMovieShows()
-            self?.currentPage += 1
-            self?.isDataLoading = false
-            self?.delegate?.reloadData?()
+            self?.handleResponse(object)
         }
+    }
+    
+    private func handleResponse(_ object: MovieShowsList) {
+        do {
+            try throwError(with: object)
+        } catch {
+            delegate?.showAlert?(message: error.localizedDescription)
+            return
+        }
+        
+        arrayMovieShows.append(contentsOf: object.results ?? [])
+        saveMovieShows()
+        currentPage += 1
+        isDataLoading = false
+        delegate?.reloadData?()
     }
     
     func loadDataPaginationIfNeeded(at indexPath: IndexPath) {
@@ -104,16 +108,16 @@ class MovieShowsViewModel: ViewModel, LoadingProtocol {
     // MARK: - View Model instantiation -
     
     func movieShowCellViewModel(at indexPath: IndexPath) -> MovieShowCellViewModel? {
-        guard indexPath.row < arrayMovieShows.count else {
+        guard indexPath.item < arrayMovieShows.count else {
             return nil
         }
-        return MovieShowCellViewModel(object: arrayMovieShows[indexPath.row])
+        return MovieShowCellViewModel(object: arrayMovieShows[indexPath.item])
     }
     
     func movieShowDetailViewModel(at indexPath: IndexPath?) -> MovieShowDetailViewModel? {
-        guard let indexPath = indexPath, indexPath.row < arrayMovieShows.count else {
+        guard let indexPath = indexPath, indexPath.item < arrayMovieShows.count else {
             return nil
         }
-        return MovieShowDetailViewModel(object: arrayMovieShows[indexPath.row], isMoviesTab: isMoviesTab)
+        return MovieShowDetailViewModel(object: arrayMovieShows[indexPath.item], isMoviesTab: isMoviesTab)
     }
 }

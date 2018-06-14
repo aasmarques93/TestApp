@@ -9,6 +9,8 @@
 import Bond
 
 struct MovieShowCellViewModel: ViewModel {
+    // MARK: - Properties -
+    
     // MARK: Observables
     var title = Observable<String?>(nil)
     var average = Observable<String?>(nil)
@@ -18,18 +20,20 @@ struct MovieShowCellViewModel: ViewModel {
     
     // MARK: Objects
     private var movieShow: MovieShow
-    
-    // MARK: Properties
+
+    // MARK: Variables
     var imagePathUrl: URL? {
         return URL(string: serviceModel.imageUrl(with: movieShow.posterPath))
     }
     
-    // MARK: Life cycle
+    // MARK: - Life cycle -
+    
     init(object: MovieShow) {
         movieShow = object
     }
     
-    // MARK: View Model
+    // MARK: - View Model -
+    
     func loadData() {
         title.value = movieShow.title ?? movieShow.originalName
         guard let voteAverage = movieShow.voteAverage else {

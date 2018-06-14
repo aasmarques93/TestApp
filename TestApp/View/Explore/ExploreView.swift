@@ -7,13 +7,12 @@
 //
 
 import UIKit
-import ViewAnimator
 
-private let animations = [AnimationType.from(direction: .right, offset: 30.0)]
 private let margin: CGFloat = 2
 private let numberOfColumns: CGFloat = 2
 
 class ExploreView: UICollectionViewController {
+    
     // MARK: - Properties -
     
     let viewModel = ExploreViewModel()
@@ -39,10 +38,10 @@ class ExploreView: UICollectionViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        UIView.animate(views: collectionView?.visibleCells(in: 0) ?? [], animations: animations)
+        ViewAnimatorHelper.animate(views: collectionView?.visibleCells(in: 0))
     }
     
-    // MARK: - Setup Appearance -
+    // MARK: - Setup -
     
     private func setupAppearance() {
         title = Titles.explore.localized

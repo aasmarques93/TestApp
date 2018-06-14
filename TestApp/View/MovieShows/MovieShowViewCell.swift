@@ -11,10 +11,10 @@ import SDWebImage
 import CollectionViewSlantedLayout
 
 class MovieShowViewCell: CollectionViewSlantedCell {
+    
     // MARK: - Outlets -
     
     @IBOutlet var imageView: UIImageView!
-    @IBOutlet var viewTitle: UIView!
     @IBOutlet var labelTitle: UILabel!
     @IBOutlet var labelAverage: UILabel!
     
@@ -25,10 +25,10 @@ class MovieShowViewCell: CollectionViewSlantedCell {
     // MARK: - Setup -
     
     func setupView(at indexPath: IndexPath, withLayout layout: CollectionViewSlantedLayout?) {
-        setupBidings()
-        setupAppearance(at: indexPath, withLayout: layout)
-        imageView.sd_setImage(with: viewModel?.imagePathUrl, placeholderImage: UIImage())
         viewModel?.loadData()
+        setupBidings()
+        setupAppearance(withLayout: layout)
+        setupContent()
     }
     
     private func setupBidings() {
@@ -36,13 +36,19 @@ class MovieShowViewCell: CollectionViewSlantedCell {
         viewModel?.average.bind(to: labelAverage.reactive.text)
     }
     
-    private func setupAppearance(at indexPath: IndexPath, withLayout layout: CollectionViewSlantedLayout?) {
+    private func setupAppearance(withLayout layout: CollectionViewSlantedLayout?) {
         guard let layout = layout else {
             return
         }
         contentView.transform = CGAffineTransform(rotationAngle: layout.slantingAngle)
-        viewTitle.transform = CGAffineTransform(rotationAngle: indexPath.row > 0 ? layout.slantingAngle : 0)
     }
+    
+    private func setupContent() {
+        imageView.sd_setImage(with: viewModel?.imagePathUrl, placeholderImage: UIImage())
+        ViewAnimatorHelper.animate(views: [labelTitle, labelAverage], direction: .top)
+    }
+    
+    // MARK: - Parallax Effect Methods -
     
     var imageHeight: CGFloat {
         return imageView?.image?.size.height ?? 0
@@ -63,6 +69,5 @@ class MovieShowViewCell: CollectionViewSlantedCell {
         imageView = nil
         labelTitle = nil
         labelAverage = nil
-        viewTitle = nil
     }
 }

@@ -14,6 +14,7 @@ private let offsetSpeed: CGFloat = 150
 private let cellHeight: CGFloat = 275
 
 class MovieShowsView: UICollectionViewController {
+    
     // MARK: - View Model -
     
     var viewModel: MovieShowsViewModel?
@@ -41,7 +42,7 @@ class MovieShowsView: UICollectionViewController {
         let animator = FastAnimator(frame: .zero,
                                     color: UIColor(colorStyle: .primary),
                                     arrowColor: UIColor(colorStyle: .secondary),
-                                    lineWidth: 2.0)
+                                    lineWidth: 1.0)
         
         collectionView?.cr.addHeadRefresh(animator: animator, handler: { [weak self] in
             self?.viewModel?.loadData(forceRefresh: true)
@@ -59,6 +60,8 @@ extension MovieShowsView: ViewModelDelegate {
         collectionView?.cr.endHeaderRefresh()
         collectionView?.reloadData()
         collectionView?.collectionViewLayout.invalidateLayout()
+        
+        ViewAnimatorHelper.animate(views: [collectionView])
     }
     
     func showAlert(message: String?) {

@@ -9,7 +9,9 @@
 import UIKit
 
 class MovieShowXibView: XibView {
+    
     // MARK: - Outlets -
+    
     @IBOutlet weak var imageViewMovie: UIImageView!
     
     // MARK: - Life cycle -

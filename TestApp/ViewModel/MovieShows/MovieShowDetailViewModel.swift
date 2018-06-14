@@ -13,6 +13,7 @@ protocol MovieShowDetailViewModelDelegate: ViewModelDelegate {
 }
 
 class MovieShowDetailViewModel: ViewModel, LoadingProtocol {
+    
     // MARK: - Properties -
     
     internal var loading: Loading = Loading()
@@ -46,21 +47,19 @@ class MovieShowDetailViewModel: ViewModel, LoadingProtocol {
         }
     }
     
-    var average: CGFloat {
-        return CGFloat(movieShowDetail?.voteAverage ?? 0) / 10
-    }
     
     // MARK: Variables
     private var isMoviesTab: Bool
 
+    var average: CGFloat {
+        return CGFloat(movieShowDetail?.voteAverage ?? 0) / 10
+    }
     var isDetailEmpty: Bool {
         return movieShowDetail == nil
     }
-    
     var imageUrl: URL? {
         return URL(string: serviceModel.imageUrl(with: movieShow.backdropPath ?? ""))
     }
-    
     var movieShowTitle: String? {
         return movieShow.title ?? movieShow.originalName
     }

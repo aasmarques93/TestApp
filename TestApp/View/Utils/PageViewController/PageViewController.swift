@@ -13,10 +13,13 @@ protocol PageViewControllerDelegate: class {
 }
 
 class PageViewController: UIPageViewController {
+    
     // MARK: - Protocols -
+    
     weak var pageViewControllerDelegate: PageViewControllerDelegate?
     
     // MARK: - View Model -
+    
     var viewModel: MovieShowsContainerViewModel?
     
     // MARK: - Life cycle -
@@ -78,6 +81,6 @@ extension PageViewController: UIPageViewControllerDelegate {
                             previousViewControllers: [UIViewController],
                             transitionCompleted completed: Bool) {
         
-        pageViewControllerDelegate?.didFinishAnimating(at: IndexPath(row: getCurrentPageIndex(), section: 0))
+        pageViewControllerDelegate?.didFinishAnimating(at: IndexPath(item: getCurrentPageIndex(), section: 0))
     }
 }

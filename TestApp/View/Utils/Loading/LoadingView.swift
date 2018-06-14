@@ -15,6 +15,9 @@ private let alphaBackground: CGFloat = 0.7
 private let fontSize: CGFloat = 14
 
 fileprivate class LoadingView: UIView {
+    
+    // MARK: - Properties -
+    
     private var activityIndicator: NVActivityIndicatorView {
         let type = NVActivityIndicatorType(rawValue: Int.random(lower: 0, upper: 32))
         let activityIndicator = NVActivityIndicatorView(frame: CGRect(x: 0, y: margin, width: activityHeight, height: activityHeight),
@@ -26,6 +29,8 @@ fileprivate class LoadingView: UIView {
         
         return activityIndicator
     }
+    
+    // MARK: - Methods -
     
     func addActivityIndicator() {
         addSubview(activityIndicator)

@@ -9,6 +9,7 @@
 import UIKit
 
 class MovieShowsContainerView: UIViewController {
+    
     // MARK: - Properties -
     
     var pagerView: PagerView?
@@ -73,7 +74,7 @@ class MovieShowsContainerView: UIViewController {
 
 extension MovieShowsContainerView: PagerViewDelegate {
     func didSelect(at indexPath: IndexPath) {
-        pageViewController?.setupStartViewController(index: indexPath.row)
+        pageViewController?.setupStartViewController(index: indexPath.item)
     }
 }
 

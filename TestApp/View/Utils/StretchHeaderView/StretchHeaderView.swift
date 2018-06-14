@@ -9,10 +9,15 @@
 import UIKit
 
 class StretchHeaderView: UIView {
+    
+    // MARK: - Properties -
+    
     private var imageViewHeader = UIImageView()
     private var activityIndicator = UIActivityIndicatorView()
     
     private var minHeightPercentual: CGFloat = 0, maxHeightPercentual: CGFloat = 1.0
+    
+    // MARK: - Setup -
     
     func setupHeaderView(tableView: UITableView,
                          imageUrl: URL? = nil,
@@ -39,6 +44,8 @@ class StretchHeaderView: UIView {
         
         tableView.contentInset = UIEdgeInsetsMake(frame.height, 0, 0, 0)
     }
+    
+    // MARK: - UIScrollViewDelegate -
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let y = frame.height - (scrollView.contentOffset.y + frame.height)

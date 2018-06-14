@@ -18,17 +18,22 @@ private let itemHeight: CGFloat = 40
 private let itemWidth: CGFloat = 144
 
 class PagerView: UIViewController {
+    
     // MARK: - Outlets -
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet var viewIndicator: UIView!
     
     // MARK: - Delegate -
+    
     weak var delegate: PagerViewDelegate?
     
     // MARK: - View Model -
+    
     var viewModel: PagerViewModel?
     
     // MARK: - Properties -
+    
     var currentIndexPath: IndexPath?
     
     // MARK: - Life cycle -

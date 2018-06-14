@@ -36,10 +36,10 @@ class ExploreViewModel: ViewModel, LoadingProtocol {
     // MARK: - View Model -
     
     func exploreCellViewModel(at indexPath: IndexPath) -> ExploreCellViewModel {
-        return ExploreCellViewModel(object: arrayGenres[indexPath.row])
+        return ExploreCellViewModel(object: arrayGenres[indexPath.item])
     }
     
     func movieShowsViewModel(at indexPath: IndexPath) -> MovieShowsViewModel {
-        return MovieShowsViewModel(selectedTab: .searchByGenre, isMoviesTab: true, genre: arrayGenres[indexPath.row])
+        return MovieShowsViewModel(selectedTab: .searchByGenre, isMoviesTab: true, genre: arrayGenres[indexPath.item])
     }
 }

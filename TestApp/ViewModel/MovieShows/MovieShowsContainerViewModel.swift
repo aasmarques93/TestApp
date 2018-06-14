@@ -58,7 +58,9 @@ extension MovieShowTab {
 }
 
 struct MovieShowsContainerViewModel: ViewModel {
+    
     // MARK: - Objects -
+    
     private var arrayTabs: [MovieShowTab] {
         return isMoviesTab ? MovieShowTab.movies : MovieShowTab.shows
     }
@@ -70,11 +72,13 @@ struct MovieShowsContainerViewModel: ViewModel {
     private var isMoviesTab: Bool
 
     // MARK: - Life Cycle -
+    
     init(isMoviesTab: Bool) {
         self.isMoviesTab = isMoviesTab
     }
     
     // MARK: - View Model instantiation -
+    
     func movieShowsViewModel(at index: Int) -> MovieShowsViewModel? {
         return MovieShowsViewModel(selectedTab: arrayTabs[index], isMoviesTab: isMoviesTab)
     }

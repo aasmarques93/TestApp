@@ -8,14 +8,12 @@
 
 import UIKit
 import Bond
-import ViewAnimator
 import iCarousel
 
-private let animations = [AnimationType.from(direction: .right, offset: 30.0)]
-private let rotateAnimation = AnimationType.rotate(angle: 360)
-
 class MovieShowDetailView: UITableViewController {
+    
     // MARK: - Outlets -
+    
     @IBOutlet var stretchHeaderView: StretchHeaderView!
     
     @IBOutlet weak var circularProgressView: CircularProgressView!
@@ -71,10 +69,10 @@ class MovieShowDetailView: UITableViewController {
     }
     
     private func setupAnimations() {
-        UIView.animate(views: [labelDate, labelRuntime], animations: animations)
+        ViewAnimatorHelper.animate(views: [labelDate, labelRuntime])
     }
     
-    // MARK: - Table view data source -
+    // MARK: - UITableViewDataSource -
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         var height = super.tableView(tableView, heightForRowAt: indexPath)
@@ -93,6 +91,8 @@ class MovieShowDetailView: UITableViewController {
         return height
     }
     
+    // MARK: - UIScrollViewDelegate -
+    
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard scrollView == tableView else {
             return
@@ -102,9 +102,6 @@ class MovieShowDetailView: UITableViewController {
 }
 
 extension MovieShowDetailView: MovieShowDetailViewModelDelegate {
-    
-    // MARK: - Movie detail view model delegate -
-    
     func showAlert(message: String?) {
         alertController?.show(message: message)
     }
@@ -114,8 +111,8 @@ extension MovieShowDetailView: MovieShowDetailViewModelDelegate {
         stretchHeaderView.setupHeaderView(tableView: tableView, imageUrl: viewModel?.imageUrl)
         circularProgressView.progress = viewModel?.average ?? 0
         
-        UIView.animate(views: [circularProgressView], animations: [rotateAnimation])
-        UIView.animate(views: tableView.visibleCells(in: 0), animations: animations)
+        ViewAnimatorHelper.animate(views: [circularProgressView], type: .rotate)
+        ViewAnimatorHelper.animate(views: tableView.visibleCells(in: 0))
     }
     
     func reloadRecommendedMovieShows() {
@@ -123,10 +120,7 @@ extension MovieShowDetailView: MovieShowDetailViewModelDelegate {
     }
 }
 
-extension MovieShowDetailView: iCarouselDelegate, iCarouselDataSource {
-    
-    // MARK: - iCarousel delegate and data source -
-    
+extension MovieShowDetailView: iCarouselDelegate, iCarouselDataSource {    
     func numberOfItems(in carousel: iCarousel) -> Int {
         guard let viewModel = viewModel else {
             return 0
