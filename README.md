@@ -22,6 +22,12 @@ These instructions will get you a copy of the project setup and run on your loca
   - $ cd /{your-project-directory-path}
   - $ pod install
 * Open the .workspace file at the latest version of xcode.
+* If your XCode version is 9.4 and the following error occurs: 'internal error. please file a bug at bugreport.apple.com and attach':
+  - This error is a bug reported from Apple builds running
+  - Clean your project folder: Cmd + Shift + K
+  - Delete Derived Data
+  - Close Xcode
+  - Restart your Mac
 
 ## Third-party
 
