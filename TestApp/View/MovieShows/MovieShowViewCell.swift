@@ -39,6 +39,7 @@ class MovieShowViewCell: CollectionViewSlantedCell {
     }
     
     private func setupAppearance(withLayout layout: CollectionViewSlantedLayout?) {
+        labelTitle.adjustsFontSizeToFitWidth = true
         guard let layout = layout else {
             return
         }

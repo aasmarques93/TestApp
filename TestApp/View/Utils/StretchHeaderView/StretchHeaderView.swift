@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 class StretchHeaderView: UIView {
     
     // MARK: - Properties -
     
     private var imageViewHeader = UIImageView()
-    private var activityIndicator = UIActivityIndicatorView()
+    private var activityIndicator = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
     
     private var minHeightPercentual: CGFloat = 0, maxHeightPercentual: CGFloat = 1.0
     
@@ -36,7 +37,8 @@ class StretchHeaderView: UIView {
         imageViewHeader.removeFromSuperview()
         tableView.addSubview(imageViewHeader)
         
-        activityIndicator.activityIndicatorViewStyle = .whiteLarge
+        activityIndicator.type = .ballTrianglePath
+        activityIndicator.color = UIColor(colorStyle: .secondary)
         activityIndicator.center = CGPoint(x: imageViewHeader.center.x, y: imageViewHeader.center.y)
         activityIndicator.startAnimating()
         activityIndicator.removeFromSuperview()
