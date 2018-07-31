@@ -2,7 +2,7 @@
 //  GenresList.swift
 //  TestApp
 //
-//  Created by Arthur Augusto Sousa Marques on 6/12/18.
+//  Created by Arthur Augusto Sousa Marques on 7/31/18.
 //  Copyright © 2018 Arthur Augusto. All rights reserved.
 //
 
@@ -38,9 +38,9 @@ struct GenresList: Model {
     }
     
     /// Generates description of the object in the form of a NSDictionary.
-    func dictionaryRepresentation() -> [String: Any] {
+    var dictionaryRepresentation: [String: Any] {
         var dictionary: [String: Any] = [:]
-        if let value = genres { dictionary[SerializationKeys.genres] = value.map { $0.dictionaryRepresentation() } }
+        if let value = genres { dictionary[SerializationKeys.genres] = value.map { $0.dictionaryRepresentation } }
         return dictionary
     }
 }

@@ -2,7 +2,7 @@
 //  MovieShowsList.swift
 //  TestApp
 //
-//  Created by Arthur Augusto Sousa Marques on 6/8/18.
+//  Created by Arthur Augusto Sousa Marques on 7/31/18.
 //  Copyright © 2018 Arthur Augusto. All rights reserved.
 //
 
@@ -47,11 +47,11 @@ struct MovieShowsList: Model {
     }
     
     /// Generates description of the object in the form of a NSDictionary.
-    func dictionaryRepresentation() -> [String: Any] {
+    var dictionaryRepresentation: [String: Any] {
         var dictionary: [String: Any] = [:]
         if let value = totalPages { dictionary[SerializationKeys.totalPages] = value }
         if let value = page { dictionary[SerializationKeys.page] = value }
-        if let value = results { dictionary[SerializationKeys.results] = value.map { $0.dictionaryRepresentation() } }
+        if let value = results { dictionary[SerializationKeys.results] = value.map { $0.dictionaryRepresentation } }
         if let value = totalResults { dictionary[SerializationKeys.totalResults] = value }
         return dictionary
     }

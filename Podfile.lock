@@ -22,7 +22,6 @@ PODS:
   - SDWebImage (4.3.3):
     - SDWebImage/Core (= 4.3.3)
   - SDWebImage/Core (4.3.3)
-  - SwiftKeychainWrapper (3.0.1)
   - SwiftyJSON (4.1.0)
   - ViewAnimator (2.0.0)
 
@@ -37,12 +36,11 @@ DEPENDENCIES:
   - NVActivityIndicatorView
   - RAMAnimatedTabBarController
   - SDWebImage
-  - SwiftKeychainWrapper
   - SwiftyJSON
   - ViewAnimator
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - Alamofire
     - Bond
     - CollectionViewSlantedLayout
@@ -56,7 +54,6 @@ SPEC REPOS:
     - ReactiveKit
     - Result
     - SDWebImage
-    - SwiftKeychainWrapper
     - SwiftyJSON
     - ViewAnimator
 
@@ -74,10 +71,9 @@ SPEC CHECKSUMS:
   ReactiveKit: cafbc91f72751d09baa9a3c3cf6d82b646328a6c
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
-  SwiftKeychainWrapper: 38952a3636320ae61bad3513cadd870929de7a4a
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
   ViewAnimator: 9d60ae822b6637832bc0a4f7dd8e01489103ee7c
 
-PODFILE CHECKSUM: dafd9e14a18851a5465536984336ce64efbce5da
+PODFILE CHECKSUM: e5ddd1c04968fccc7b3088daf8b137c47f1a11f3
 
-COCOAPODS: 1.5.0.beta.1
+COCOAPODS: 1.5.3

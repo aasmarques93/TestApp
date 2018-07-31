@@ -2,7 +2,7 @@
 //  ServiceModel.swift
 //  TestApp
 //
-//  Created by Arthur Augusto Sousa Marques on 6/8/18.
+//  Created by Arthur Augusto Sousa Marques on 7/31/18.
 //  Copyright © 2018 Arthur Augusto. All rights reserved.
 //
 
@@ -11,9 +11,9 @@ import Alamofire
 import SwiftyJSON
 import Moya
 
-typealias HandlerCallback = () -> Swift.Void
-typealias HandlerObject = (Any?) -> Swift.Void
-typealias Handler<Element> = (Element) -> Swift.Void
+typealias HandlerCallback = () -> Void
+typealias HandlerObject = (Any?) -> Void
+typealias Handler<Element> = (Element) -> Void
 
 // MARK: - Service Model -
 

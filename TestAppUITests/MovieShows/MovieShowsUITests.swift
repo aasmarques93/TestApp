@@ -2,7 +2,7 @@
 //  MovieShowsUITests.swift
 //  TestAppUITests
 //
-//  Created by Arthur Augusto Sousa Marques on 6/14/18.
+//  Created by Arthur Augusto Sousa Marques on 8/1/18.
 //  Copyright © 2018 Arthur Augusto. All rights reserved.
 //
 

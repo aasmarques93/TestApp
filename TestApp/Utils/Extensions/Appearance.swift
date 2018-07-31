@@ -2,7 +2,7 @@
 //  Appearance.swift
 //  TestApp
 //
-//  Created by Arthur Augusto Sousa Marques on 6/8/18.
+//  Created by Arthur Augusto Sousa Marques on 7/31/18.
 //  Copyright © 2018 Arthur Augusto. All rights reserved.
 //
 
@@ -12,11 +12,13 @@ var SCREEN_WIDTH: CGFloat {
     return UIScreen.main.bounds.width
 }
 var SCREEN_HEIGHT: CGFloat {
-    return AppDelegate.shared.window!.frame.height
+    return AppDelegate.shared.window?.frame.height ?? 0
 }
 
 extension UINavigationController {
     open override func awakeFromNib() {
+        super.awakeFromNib()
+        
         navigationBar.barTintColor = UIColor(colorStyle: .primary)
         navigationBar.tintColor = UIColor(colorStyle: .secondary)
         navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: navigationBar.tintColor]
@@ -30,6 +32,7 @@ extension UINavigationController {
 
 extension UIViewController {
     open override func awakeFromNib() {
+        super.awakeFromNib()
         view.backgroundColor = UIColor(colorStyle: .primary)
     }
     
@@ -45,6 +48,7 @@ extension UIViewController {
 
 extension UITabBar {
     open override func awakeFromNib() {
+        super.awakeFromNib()
         isTranslucent = false
         barTintColor = UIColor(colorStyle: .primary)
         tintColor = UIColor(colorStyle: .secondary)
@@ -53,6 +57,7 @@ extension UITabBar {
 
 extension UITabBarController {
     open override func awakeFromNib() {
+        super.awakeFromNib()
         tabBar.tintColor = UIColor(colorStyle: .primary)
     }
 }

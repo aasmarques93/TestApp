@@ -1,8 +1,8 @@
 //
-//  MovieDetail.swift
+//  MovieShowDetail.swift
 //  TestApp
 //
-//  Created by Arthur Augusto Sousa Marques on 6/8/18.
+//  Created by Arthur Augusto Sousa Marques on 7/31/18.
 //  Copyright © 2018 Arthur Augusto. All rights reserved.
 //
 
@@ -83,7 +83,7 @@ struct MovieShowDetail: Model {
     }
     
     /// Generates description of the object in the form of a NSDictionary.
-    func dictionaryRepresentation() -> [String: Any] {
+    var dictionaryRepresentation: [String: Any] {
         var dictionary: [String: Any] = [:]
         if let value = backdropPath { dictionary[SerializationKeys.backdropPath] = value }
         if let value = voteCount { dictionary[SerializationKeys.voteCount] = value }
@@ -100,7 +100,7 @@ struct MovieShowDetail: Model {
         if let value = originalName { dictionary[SerializationKeys.originalName] = value }
         if let value = firstAirDate { dictionary[SerializationKeys.firstAirDate] = value }
         if let value = lastAirDate { dictionary[SerializationKeys.lastAirDate] = value }
-        if let value = genres { dictionary[SerializationKeys.genres] = value.map { $0.dictionaryRepresentation() } }
+        if let value = genres { dictionary[SerializationKeys.genres] = value.map { $0.dictionaryRepresentation } }
         return dictionary
     }
 }

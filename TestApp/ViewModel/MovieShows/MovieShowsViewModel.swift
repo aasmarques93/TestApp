@@ -2,7 +2,7 @@
 //  MovieShowsViewModel.swift
 //  TestApp
 //
-//  Created by Arthur Augusto Sousa Marques on 6/9/18.
+//  Created by Arthur Augusto Sousa Marques on 8/1/18.
 //  Copyright © 2018 Arthur Augusto. All rights reserved.
 //
 
@@ -104,7 +104,7 @@ class MovieShowsViewModel: ViewModel, LoadingProtocol {
         guard currentPage == 1 else {
             return
         }
-        _ = LocalStorageHelper.save(object: arrayMovieShows.map { $0.dictionaryRepresentation() },
+        _ = LocalStorageHelper.save(object: arrayMovieShows.map { $0.dictionaryRepresentation },
                                     requestUrl: selectedTab.requestUrl)
     }
     

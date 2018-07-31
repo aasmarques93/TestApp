@@ -2,13 +2,13 @@
 //  General.swift
 //  TestApp
 //
-//  Created by Arthur Augusto Sousa Marques on 6/8/18.
+//  Created by Arthur Augusto Sousa Marques on 7/31/18.
 //  Copyright © 2018 Arthur Augusto. All rights reserved.
 //
 
 import UIKit
 
-typealias HandlerGeneric = (_ object: Any?) -> Swift.Void
+typealias HandlerGeneric = (_ object: Any?) -> Void
 
 enum Storyboard: String {
     case main = "Main"

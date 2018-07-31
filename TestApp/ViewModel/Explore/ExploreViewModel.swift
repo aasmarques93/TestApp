@@ -2,11 +2,11 @@
 //  ExploreViewModel.swift
 //  TestApp
 //
-//  Created by Arthur Augusto Sousa Marques on 6/13/18.
+//  Created by Arthur Augusto Sousa Marques on 8/1/18.
 //  Copyright © 2018 Arthur Augusto. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 class ExploreViewModel: ViewModel, LoadingProtocol {
     // MARK: - Properties -

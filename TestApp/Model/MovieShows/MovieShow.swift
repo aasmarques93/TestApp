@@ -2,7 +2,7 @@
 //  MovieShow.swift
 //  TestApp
 //
-//  Created by Arthur Augusto Sousa Marques on 6/8/18.
+//  Created by Arthur Augusto Sousa Marques on 7/31/18.
 //  Copyright © 2018 Arthur Augusto. All rights reserved.
 //
 
@@ -59,7 +59,7 @@ struct MovieShow: Model {
     }
     
     /// Generates description of the object in the form of a NSDictionary.
-    func dictionaryRepresentation() -> [String: Any] {
+    var dictionaryRepresentation: [String: Any] {
         var dictionary: [String: Any] = [:]
         if let value = posterPath { dictionary[SerializationKeys.posterPath] = value }
         if let value = backdropPath { dictionary[SerializationKeys.backdropPath] = value }

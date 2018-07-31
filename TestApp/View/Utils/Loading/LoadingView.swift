@@ -2,7 +2,7 @@
 //  LoadingView.swift
 //  TestApp
 //
-//  Created by Arthur Augusto Sousa Marques on 6/11/18.
+//  Created by Arthur Augusto Sousa Marques on 8/1/18.
 //  Copyright © 2018 Arthur Augusto. All rights reserved.
 //
 
@@ -19,7 +19,8 @@ fileprivate class LoadingView: UIView {
     // MARK: - Properties -
     
     private var activityIndicator: NVActivityIndicatorView {
-        let type = NVActivityIndicatorType(rawValue: Int.random(lower: 0, upper: 32))
+        let maxIndicatorTypes = 32
+        let type = NVActivityIndicatorType(rawValue: Int.random(lower: 0, upper: maxIndicatorTypes))
         let activityIndicator = NVActivityIndicatorView(frame: CGRect(x: 0, y: margin, width: activityHeight, height: activityHeight),
                                                         type: type)
         

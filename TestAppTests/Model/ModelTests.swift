@@ -2,7 +2,7 @@
 //  ModelTests.swift
 //  TestAppTests
 //
-//  Created by Arthur Augusto Sousa Marques on 6/12/18.
+//  Created by Arthur Augusto Sousa Marques on 8/1/18.
 //  Copyright © 2018 Arthur Augusto. All rights reserved.
 //
 
@@ -26,7 +26,7 @@ class ModelTests: XCTestCase {
         let object = JSONWrapper.object(from: requestUrl)
         let mockObject = T(object: object!)
         XCTAssertNil(mockObject.statusMessage)
-        XCTAssertFalse(mockObject.dictionaryRepresentation().count == 0)
+        XCTAssertFalse(mockObject.dictionaryRepresentation.count == 0)
         
         let failureObject = T(object: nil)
         XCTAssertNotNil(failureObject.statusMessage)
