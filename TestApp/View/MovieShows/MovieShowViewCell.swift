@@ -43,7 +43,8 @@ class MovieShowViewCell: CollectionViewSlantedCell {
         guard let layout = layout else {
             return
         }
-        contentView.transform = CGAffineTransform(rotationAngle: layout.slantingAngle)
+        let angle = UIDevice.current.orientation.isPortrait ? layout.slantingAngle : (layout.slantingAngle + 1) * -1 
+        contentView.transform = CGAffineTransform(rotationAngle: angle)
     }
     
     private func setupContent() {

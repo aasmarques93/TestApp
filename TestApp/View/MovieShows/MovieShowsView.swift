@@ -12,6 +12,7 @@ import CRRefresh
 
 private let offsetSpeed: CGFloat = 150
 private let cellHeight: CGFloat = 275
+private let cellWidth: CGFloat = 325
 
 class MovieShowsView: UICollectionViewController {
     
@@ -52,6 +53,14 @@ class MovieShowsView: UICollectionViewController {
     private func setupViewModel() {
         viewModel?.delegate = self
         viewModel?.loadData()
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        guard let collectionViewLayout = collectionView?.collectionViewLayout as? CollectionViewSlantedLayout else {
+            return
+        }
+        collectionViewLayout.scrollDirection = UIDevice.current.orientation.isLandscape ? .horizontal : .vertical
+        reloadData()
     }
 }
 
@@ -101,7 +110,7 @@ extension MovieShowsView: CollectionViewDelegateSlantedLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: CollectionViewSlantedLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGFloat {
-        return cellHeight
+        return collectionViewLayout.scrollDirection == .vertical ? cellHeight : cellWidth
     }
 }
 
