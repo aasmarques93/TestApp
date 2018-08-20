@@ -17,4 +17,14 @@ struct ExploreServiceModel: ServiceModel {
             handler(GenresList(object: object))
         })
     }
+    
+    func searchMovieShow(query: String?, handler: @escaping Handler<MovieShowsList>) {
+        var parameters = [String: Any]()
+        parameters["query"] = query ?? ""
+        parameters["page"] = 1
+        parameters["language"] = Locale.preferredLanguages.first ?? ""
+        request(requestUrl: .multiSearch, urlParameters: parameters, handlerObject: { (object) in
+            handler(MovieShowsList(object: object))
+        })
+    }
 }

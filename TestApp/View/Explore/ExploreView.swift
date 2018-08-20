@@ -15,6 +15,7 @@ class ExploreView: UICollectionViewController {
     
     // MARK: - Properties -
     
+    lazy var searchBar = UISearchBar(frame: .zero)
     let viewModel = ExploreViewModel()
     
     var collectionViewFlowLayout: UICollectionViewFlowLayout {
@@ -44,8 +45,22 @@ class ExploreView: UICollectionViewController {
     // MARK: - Setup -
     
     private func setupAppearance() {
-        title = Titles.explore.localized
+        searchBar.placeholder = Titles.explore.localized
+        searchBar.delegate = self
+        
+        let textField = searchBar.value(forKey: "_searchField") as? UITextField
+        textField?.backgroundColor = ColorStyle.primary.color
+        textField?.textColor = ColorStyle.text.color
+        
+        navigationItem.titleView = searchBar
         collectionView?.collectionViewLayout = collectionViewFlowLayout
+        collectionView?.keyboardDismissMode = .onDrag
+    }
+    
+    private func pushMovieShowsView(viewModel: MovieShowsViewModel) {
+        let viewController = instantiate(viewController: MovieShowsView.self, from: .movieShows)
+        viewController.viewModel = viewModel
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }
 
@@ -68,14 +83,24 @@ extension ExploreView {
 
 extension ExploreView {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let viewController = instantiate(viewController: MovieShowsView.self, from: .movieShows)
-        viewController.viewModel = viewModel.movieShowsViewModel(at: indexPath)
-        navigationController?.pushViewController(viewController, animated: true)
+        pushMovieShowsView(viewModel: viewModel.movieShowsViewModel(at: indexPath))
     }
 }
 
-extension ExploreView: ViewModelDelegate {
+extension ExploreView: ExploreViewModelDelegate {
     func reloadData() {
         collectionView?.reloadData()
+    }
+    
+    func didFinishSearch(_ movieShowsViewModel: MovieShowsViewModel) {
+        pushMovieShowsView(viewModel: movieShowsViewModel)
+    }
+}
+
+// MARK: - UISearchBarDelegate -
+
+extension ExploreView: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        viewModel.searchMovieShow(text: searchBar.text)
     }
 }

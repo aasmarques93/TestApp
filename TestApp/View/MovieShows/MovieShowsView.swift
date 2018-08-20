@@ -36,7 +36,7 @@ class MovieShowsView: UICollectionViewController {
     // MARK: - Setup -
     
     private func setupAppearance() {
-        title = viewModel?.genreTitle
+        title = viewModel?.genreTitle ?? viewModel?.query 
     }
     
     private func setupRefresh() {

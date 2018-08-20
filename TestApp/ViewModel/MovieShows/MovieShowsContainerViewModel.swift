@@ -23,6 +23,7 @@ enum MovieShowTab: String {
     
     // Genre
     case searchByGenre
+    case searchByText
     
     static var movies: [MovieShowTab] = [.popular, .topRated, .upcoming, .nowPlaying]
     static var shows: [MovieShowTab] = [.airingToday, .onTheAir, .popularShow, .topRatedShow]
@@ -53,6 +54,8 @@ extension MovieShowTab {
             return .tvTopRated
         case .searchByGenre:
             return .searchByGenre
+        case .searchByText:
+            return .multiSearch
         }
     }
 }

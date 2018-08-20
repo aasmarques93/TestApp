@@ -92,6 +92,7 @@ enum RequestUrl: String {
     case genres
     case searchByGenre
     case test
+    case multiSearch
 }
 
 extension RequestUrl {

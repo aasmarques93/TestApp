@@ -36,5 +36,7 @@
 	<string>/tv/{id}/recommendations?language={language}&amp;</string>
 	<key>genres</key>
 	<string>/genre/movie/list?language={language}&amp;</string>
+	<key>multiSearch</key>
+	<string>/search/multi?language={language}&amp;query={query}&amp;page={page}&amp;</string>
 </dict>
 </plist>

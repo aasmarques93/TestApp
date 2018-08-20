@@ -23,6 +23,7 @@ struct MovieShow: Model {
         static let id = "id"
         static let title = "title"
         static let voteAverage = "vote_average"
+        static let mediaType = "media_type"
     }
     
     // MARK: Properties
@@ -34,6 +35,7 @@ struct MovieShow: Model {
     var id: Int?
     var title: String?
     var voteAverage: Float?
+    var mediaType: String?
     
     // MARK: SwiftyJSON Initializers
     init(object: Any?) {
@@ -56,6 +58,7 @@ struct MovieShow: Model {
         id = json[SerializationKeys.id].int
         title = json[SerializationKeys.title].string
         voteAverage = json[SerializationKeys.voteAverage].float
+        mediaType = json[SerializationKeys.mediaType].string
     }
     
     /// Generates description of the object in the form of a NSDictionary.
@@ -69,6 +72,7 @@ struct MovieShow: Model {
         if let value = id { dictionary[SerializationKeys.id] = value }
         if let value = title { dictionary[SerializationKeys.title] = value }
         if let value = voteAverage { dictionary[SerializationKeys.voteAverage] = value }
+        if let value = mediaType { dictionary[SerializationKeys.mediaType] = value }
         return dictionary
     }
 }

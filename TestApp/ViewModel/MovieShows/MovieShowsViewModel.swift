@@ -36,7 +36,9 @@ class MovieShowsViewModel: ViewModel, LoadingProtocol {
     private var isMoviesTab: Bool
     private var selectedTab: MovieShowTab
     private var genre: Genre?
+        
     var genreTitle: String? { return genre?.name }
+    var query: String?
     
     private var parameters: [String: Any] {
         return [
@@ -49,17 +51,19 @@ class MovieShowsViewModel: ViewModel, LoadingProtocol {
     
     // MARK: - Life cycle -
     
-    init(selectedTab: MovieShowTab, isMoviesTab: Bool, genre: Genre? = nil) {
+    init(selectedTab: MovieShowTab, isMoviesTab: Bool, genre: Genre? = nil, query: String? = nil, arrayMovieShows: [MovieShow] = []) {
         self.selectedTab = selectedTab
         self.isMoviesTab = isMoviesTab
         self.genre = genre
+        self.query = query
+        self.arrayMovieShows = arrayMovieShows
     }
     
     // MARK: - Service Requests -
     
     func loadData(forceRefresh: Bool = false, isPagination: Bool = false) {
         guard forceRefresh || arrayCache.isEmpty || selectedTab.requestUrl == .searchByGenre else {
-            arrayMovieShows = arrayCache
+            if selectedTab != .searchByText { arrayMovieShows = arrayCache }
             delegate?.reloadData?()
             return
         }

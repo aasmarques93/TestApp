@@ -40,7 +40,7 @@ DEPENDENCIES:
   - ViewAnimator
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - Bond
     - CollectionViewSlantedLayout
@@ -76,4 +76,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: e5ddd1c04968fccc7b3088daf8b137c47f1a11f3
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.5.0.beta.1
