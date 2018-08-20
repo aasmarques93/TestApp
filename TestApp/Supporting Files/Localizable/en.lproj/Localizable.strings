@@ -1,0 +1,35 @@
+/* 
+  Localizable.strings
+  TestApp
+
+  Created by Arthur Augusto Sousa Marques on 6/11/18.
+  Copyright © 2018 Arthur Augusto. All rights reserved.
+*/
+
+// MARK: - Movies -
+
+"popular" = "Popular";
+"nowPlaying" = "Now Playing";
+"topRated" = "Top Rated";
+"upcoming" = "Upcoming";
+
+// MARK: - TV Shows -
+
+"airingToday" = "Airing Today";
+"onTheAir" = "On the Air";
+"popularShow" = "Popular";
+"topRatedShow" = "Top Rated";
+
+// MARK: - Titles -
+
+"Movies" = "Movies";
+"TV Shows" = "TV Shows";
+"Explore" = "Explore";
+"Error" = "Error";
+"Success" = "Success";
+
+// MARK: - Messages -
+
+"There are no items available" = "There are no items available";
+"You have lost your internet connection. Please try again later." = "You have lost your internet connection. Please try again later.";
+"An error on our servers has occurred. Please try again later." = "An error on our servers has occurred. Please try again later.";

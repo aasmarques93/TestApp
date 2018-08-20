@@ -1,0 +1,35 @@
+/* 
+  Localizable.strings
+  TestApp
+
+  Created by Arthur Augusto Sousa Marques on 6/11/18.
+  Copyright © 2018 Arthur Augusto. All rights reserved.
+*/
+
+// MARK: - Movies -
+
+"popular" = "Popular";
+"nowPlaying" = "Nos cinemas";
+"topRated" = "Mais aclamados pela crítica";
+"upcoming" = "Em breve";
+
+// MARK: - TV Shows -
+
+"airingToday" = "Exibidos hoje";
+"onTheAir" = "No ar";
+"popularShow" = "Popular";
+"topRatedShow" = "Mais aclamados pela crítica";
+
+// MARK: - Titles -
+
+"Movies" = "Filmes";
+"TV Shows" = "Séries";
+"Explore" = "Explorar";
+"Error" = "Erro";
+"Success" = "Sucesso";
+
+// MARK: - Messages -
+
+"There are no items available" = "Não há itens disponíveis";
+"You have lost your internet connection. Please try again later." = "Você perdeu a sua conexão com a internet. Por favor tente novamente mais tarde.";
+"An error on our servers has occurred. Please try again later." = "Um erro ocorreu em nossos servidores. Por favor tente novamente mais tarde.";

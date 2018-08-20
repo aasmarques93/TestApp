@@ -1,0 +1,130 @@
+//
+//  MovieShowsView.swift
+//  TestApp
+//
+//  Created by Arthur Augusto Sousa Marques on 8/1/18.
+//  Copyright © 2018 Arthur Augusto. All rights reserved.
+//
+
+import UIKit
+import CollectionViewSlantedLayout
+import CRRefresh
+
+private let offsetSpeed: CGFloat = 150
+private let cellHeight: CGFloat = 275
+private let cellWidth: CGFloat = 325
+
+class MovieShowsView: UICollectionViewController {
+    
+    // MARK: - View Model -
+    
+    var viewModel: MovieShowsViewModel?
+    
+    // MARK: - Life cycle -
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupRefresh()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupAppearance()
+        setupViewModel()
+    }
+    
+    // MARK: - Setup -
+    
+    private func setupAppearance() {
+        title = viewModel?.genreTitle ?? viewModel?.query 
+    }
+    
+    private func setupRefresh() {
+        let animator = FastAnimator(frame: .zero,
+                                    color: UIColor(colorStyle: .primary),
+                                    arrowColor: UIColor(colorStyle: .secondary),
+                                    lineWidth: 1.0)
+        
+        collectionView?.cr.addHeadRefresh(animator: animator, handler: { [weak self] in
+            self?.viewModel?.loadData(forceRefresh: true)
+        })
+    }
+    
+    private func setupViewModel() {
+        viewModel?.delegate = self
+        viewModel?.loadData()
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        guard let collectionViewLayout = collectionView?.collectionViewLayout as? CollectionViewSlantedLayout else {
+            return
+        }
+        collectionViewLayout.scrollDirection = UIDevice.current.orientation.isLandscape ? .horizontal : .vertical
+        reloadData()
+    }
+}
+
+extension MovieShowsView: ViewModelDelegate {
+    func reloadData() {
+        collectionView?.cr.endHeaderRefresh()
+        collectionView?.reloadData()
+        collectionView?.collectionViewLayout.invalidateLayout()
+    }
+    
+    func showAlert(message: String?) {
+        alertController?.show(message: message)
+    }
+}
+
+// MARK: - UICollectionViewDataSource -
+
+extension MovieShowsView {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel?.numberOfItems ?? 0
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(MovieShowViewCell.self, for: indexPath)
+        cell.viewModel = viewModel?.movieShowCellViewModel(at: indexPath)
+        cell.setupView(at: indexPath, withLayout: collectionView.collectionViewLayout as? CollectionViewSlantedLayout)
+        return cell
+    }
+}
+
+// MARK: - UICollectionViewDelegate -
+
+extension MovieShowsView {
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let viewController = instantiate(viewController: MovieShowDetailView.self, from: .movieShowDetail)
+        viewController.viewModel = viewModel?.movieShowDetailViewModel(at: indexPath)
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+    override func collectionView(_ collectionView: UICollectionView,
+                                 willDisplay cell: UICollectionViewCell,
+                                 forItemAt indexPath: IndexPath) {
+        viewModel?.loadDataPaginationIfNeeded(at: indexPath)
+    }
+}
+
+extension MovieShowsView: CollectionViewDelegateSlantedLayout {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: CollectionViewSlantedLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGFloat {
+        return collectionViewLayout.scrollDirection == .vertical ? cellHeight : cellWidth
+    }
+}
+
+// MARK: - UIScrollViewDelegate -
+
+extension MovieShowsView {
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard let collectionView = collectionView, let visibleCells = collectionView.visibleCells as? [MovieShowViewCell] else {
+            return
+        }
+        visibleCells.forEach { (parallaxCell) in
+            let yOffset = ((collectionView.contentOffset.y - parallaxCell.frame.origin.y) / parallaxCell.imageHeight) * offsetSpeed
+            let xOffset = ((collectionView.contentOffset.x - parallaxCell.frame.origin.x) / parallaxCell.imageWidth) * offsetSpeed
+            parallaxCell.offset(CGPoint(x: xOffset, y: yOffset))
+        }
+    }
+}
